@@ -24,7 +24,6 @@
   font-size: var(--text-sm);
   width: 100%;
   text-align: left;
-  cursor: pointer;
 }
 
 .contactButton {
@@ -42,7 +41,6 @@
   top: 10px;
   right: 10px;
   color: var(--text-white-50);
-  cursor: pointer;
   transition: color 0.2s ease;
   display: inline-flex;
 }

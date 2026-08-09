@@ -36,7 +36,6 @@
 
 .navItem {
   color: var(--text);
-  cursor: pointer;
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   transition: color 0.2s ease;

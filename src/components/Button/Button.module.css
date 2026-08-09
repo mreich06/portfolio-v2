@@ -1,6 +1,31 @@
 .button {
-  border: 1px solid var(--card);
   border-radius: 8px;
-  color: var(--card);
   padding: 0.4rem 0.6rem;
+}
+
+.primaryOutline {
+  border: 1px solid var(--card);
+  color: var(--card);
+}
+
+.primarySolid {
+  background: var(--card);
+  color: var(--text);
+}
+
+.outlineSecondary {
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
+.solidSecondary {
+  background: var(--accent);
+}
+
+.bold {
+  font-weight: var(--weight-bold);
+}
+
+.upperCase {
+  text-transform: uppercase;
 }
