@@ -23,12 +23,12 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Roboto Mono', monospace;
 
   /* Shades */
-  --text-white-70: #bbbec2; /* Blended #FFFFFF @ 70% */
-  --text-white-50: #8e9399; /* Blended #FFFFFF @ 50% */
+  --text-white-70: #bbbec2; /* #FFFFFF @ 70% */
+  --text-white-50: #8e9399; /* #FFFFFF @ 50% */
 
   /* Font Sizes, matches Figma sizing */
   --text-xs: 0.8125rem; /* 13px */
-  --text-sm: 1rem; /* 16px (Your Base Font Size) */
+  --text-sm: 1rem; /* 16px */
   --text-base: 1.125rem; /* 18px */
   --text-lg: 1.25rem; /* 20px */
   --text-xl: 1.5rem; /* 24px */
