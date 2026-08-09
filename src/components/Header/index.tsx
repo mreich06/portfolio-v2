@@ -1,13 +1,14 @@
 import styles from './Header.module.css';
 import Button from '../Button';
 import logoSvg from '../../assets/logo.svg';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const navItemList = ['About', 'Work', 'Stack', 'Projects'];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeItem, setActiveItem] = useState('');
+  const [activeIndex, setActiveIndex] = useState(null);
+  const underlineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,10 +21,24 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const currentPath = window.location.pathname;
-    const item = navItemList.find((item) => `/${item.toLowerCase()}` === currentPath);
-    setActiveItem(item || '');
-  }, []);
+    if (underlineRef.current) {
+      const parent = underlineRef.current.parentElement;
+
+      const activeItem = parent?.querySelector(`.${styles.activeItemWrapper}`) as HTMLElement;
+
+      if (activeItem) {
+        const left = activeItem.offsetLeft;
+        const width = activeItem.offsetWidth * 0.75;
+
+        underlineRef.current.style.transform = `translateX(${left}px) scaleX(${width})`;
+      }
+    }
+  }, [activeIndex]);
+
+  const handleItemClick = (e: React.MouseEvent, index: number) => {
+    e.preventDefault();
+    setActiveIndex(index);
+  };
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
@@ -33,12 +48,17 @@ const Header = () => {
       <nav className={styles.headerNav}>
         <ul className={styles.navItems}>
           {navItemList.map((item, index) => (
-            <li>
-              <a key={index} className={`${styles.navItem} ${activeItem === item ? styles.active : ''}`} href={`/${item.toLowerCase()}`}>
+            <li key={index} className={`${styles.navItemWrapper} ${index === activeIndex ? styles.activeItemWrapper : ''}`}>
+              <a
+                className={`${styles.navItem} ${index === activeIndex ? styles.active : ''}`}
+                onClick={(e) => handleItemClick(e, index)}
+                href={`/${item.toLowerCase()}`}
+              >
                 {item}
               </a>
             </li>
           ))}
+          <div ref={underlineRef} className={styles.activeUnderline} />
         </ul>
       </nav>
       <Button title={'Get in touch'} />
