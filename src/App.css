@@ -5,14 +5,14 @@
   --card: #49bcca;
   --text: #ffffff;
   --primary: #4fd1c5;
-  --primary-foreground: #1d2733;
+  --primary-foreground: #222f3f;
   --secondary: #f06595;
   --muted: #8f9ca8;
   --accent: #c55757;
   --terminal-red: #d94040;
   --terminal-yellow: #ead24b;
   --terminal-green: #78d940;
-  --text-gray-mono: #637484;
+  --text-gray-mono: #3e4d5b;
   --border: #37485a;
   --input: #37485a;
   --ring: #4fd1c5;
@@ -42,7 +42,8 @@ body {
   color: var(--foreground);
   margin: 0;
   padding: 0;
-  height: 2000px;
+  min-height: 100vh;
+  height: auto;
 }
 
 /* Inter Base Options */
