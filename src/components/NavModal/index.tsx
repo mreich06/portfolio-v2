@@ -9,8 +9,8 @@ interface NavModalProps {
 const NavModal = ({ setIsModalOpen }: NavModalProps) => {
   return (
     <div className={styles.modal}>
-      <button onClick={() => setIsModalOpen(false)}>
-        <X className={styles.closeIcon} size={20} />
+      <button className={styles.closeButton} onClick={() => setIsModalOpen(false)}>
+        <X size={20} />
       </button>
 
       {NAV_ITEMS.map((item) => (

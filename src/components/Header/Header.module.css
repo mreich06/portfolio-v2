@@ -59,3 +59,22 @@
   transform: scaleX(0);
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
+.mobileMenuButton {
+  display: none;
+}
+@media (max-width: 767px) {
+  .headerNav {
+    display: none;
+  }
+
+  .contactButton {
+    display: none;
+  }
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .menuIcon {
+    color: var(--text-white-50);
+  }
+}
