@@ -36,10 +36,12 @@ describe('Header Component', () => {
     const contactButton = screen.getByRole('button', { name: 'Contact' });
     expect(contactButton).toBeInTheDocument();
 
+    const contactInModal = screen.getByRole('button', { name: 'Contact' });
+    const modalContainer = contactInModal.parentElement as HTMLElement;
     // Modal Closed state
-    const closeIcon = screen.getAllByRole('button')[0];
-    fireEvent.click(closeIcon);
-    expect(contactButton).not.toBeInTheDocument();
+    const closeIconButton = modalContainer.querySelector('button') as HTMLButtonElement;
+    fireEvent.click(closeIconButton);
+    expect(screen.queryByRole('button', { name: 'Contact' })).not.toBeInTheDocument();
   });
 
   it('updates the active class visual styles when a desktop nav item is clicked', () => {
