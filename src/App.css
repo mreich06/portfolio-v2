@@ -46,6 +46,19 @@ body {
   height: auto;
 }
 
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: inherit;
+  outline: none;
+  appearance: none;
+}
+
 /* Inter Base Options */
 .font-sans-2xl {
   font-family: var(--font-sans);
