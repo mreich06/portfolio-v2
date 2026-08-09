@@ -1,0 +1,80 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background);
+  z-index: 999;
+  transition: border-bottom 0.3s ease;
+}
+
+.header.scrolled {
+  border-bottom: 1px solid var(--border);
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.navItems {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 6px 0;
+  position: relative;
+}
+
+.navItemWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.navItem {
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  transition: color 0.2s ease;
+}
+
+.navItem.active {
+  color: var(--primary);
+}
+
+/* Sliding active underline node */
+.activeUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 2px;
+  background-color: var(--primary);
+  transform-origin: left center;
+
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.mobileMenuButton {
+  display: none;
+}
+@media (max-width: 767px) {
+  .headerNav {
+    display: none;
+  }
+
+  .contactButton {
+    display: none;
+  }
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .menuIcon {
+    color: var(--text-white-50);
+  }
+}
