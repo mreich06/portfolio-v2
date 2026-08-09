@@ -28,14 +28,11 @@
 }
 
 .modalItem {
-  background: none;
-  border: none;
   color: white;
   font-size: var(--text-sm);
   width: 100%;
   text-align: left;
   cursor: pointer;
-  padding: 0;
 }
 
 .contactButton {
