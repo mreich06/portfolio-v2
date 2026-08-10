@@ -27,12 +27,12 @@
   --text-white-50: #8e9399; /* #FFFFFF @ 50% */
 
   /* Font Sizes, matches Figma sizing */
-  --text-xs: 0.8125rem; /* 13px */
+  --text-xs: 0.7rem; /* 13px */
   --text-sm: 1rem; /* 16px */
-  --text-base: 1.125rem; /* 18px */
-  --text-lg: 1.25rem; /* 20px */
-  --text-xl: 1.5rem; /* 24px */
-  --text-2xl: 3.125rem; /* 50px */
+  --text-base: 0.8rem; /* 18px */
+  --text-lg: 1rem; /* 20px */
+  --text-xl: 1.25rem; /* 24px */
+  --text-2xl: 2.5rem; /* 50px */
 }
 
 body {
@@ -75,6 +75,7 @@ button {
 .font-sans-base {
   font-family: var(--font-sans);
   font-size: var(--text-base);
+  font-weight: var(--weight-light);
 } /* 18px */
 .font-sans-xs {
   font-family: var(--font-sans);
@@ -117,4 +118,23 @@ button {
 }
 .color-gray-mono {
   color: var(--text-mono-gray);
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Font weights */
+
+.weight-light {
+  font-weight: 300;
+}
+
+.weight-regular {
+  font-weight: 400;
+}
+.weight-medium {
+  font-weight: 500;
 }
