@@ -1,0 +1,7 @@
+.badgeContainer {
+  display: flex;
+  padding: 0.5rem;
+  border: 0.5px solid var(--border);
+  border-radius: 3px;
+  gap: 1rem;
+}

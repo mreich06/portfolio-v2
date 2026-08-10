@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import About from './sections/About';
 import Hero from './sections/Hero';
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
       <Header />
       <main className="content-container">
         <Hero />
+        <About />
       </main>
     </div>
   );
