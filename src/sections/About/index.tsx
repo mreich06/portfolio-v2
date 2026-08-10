@@ -1,6 +1,8 @@
 import SectionHeader from '../../components/SectionHeader';
 import styles from './About.module.css';
 import AboutSection from './AboutSection';
+import * as BadgeLogos from '../../assets/BadgeLogos';
+import HobbyBadge from '../../components/HobbyBadge';
 
 const About = () => {
   return (
@@ -48,7 +50,15 @@ const About = () => {
 
       {/* Bottom Beyond the job section */}
       <div className={styles.bottomSection}>
-        <h3>Beyond the job</h3>
+        <div className={styles.beyondHeader}>
+          <h3>Beyond the job</h3>
+          <h5>INTERESTS AND VALUES</h5>
+        </div>
+        <div className={styles.badgeContainer}>
+          {Object.entries(BadgeLogos).map(([name, src]) => (
+            <HobbyBadge key={name} icon={src} label={name} />
+          ))}
+        </div>
       </div>
     </div>
   );
