@@ -1,0 +1,44 @@
+.hero {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 10rem;
+}
+.heroText {
+  flex: 1;
+  width: 60%;
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+.heroPhoto {
+  flex: 1;
+  width: 40%;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.photo {
+  flex: 1;
+  max-width: 300px;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .heroText {
+    width: 100%;
+    text-align: center;
+  }
+
+  .heroPhoto {
+    width: 100%;
+  }
+}
