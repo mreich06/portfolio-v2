@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import SectionHeader from './components/SectionHeader';
+import About from './sections/About';
 import Hero from './sections/Hero';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
       <Header />
       <main className="content-container">
         <Hero />
-        <SectionHeader />
+        <About />
       </main>
     </div>
   );

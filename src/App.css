@@ -87,6 +87,8 @@ button {
 .font-sans-xs {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
+  font-weight: var(--weight-light);
+  line-height: 1.5;
 } /* 13px */
 
 /* JetBrains Mono Base Options */
