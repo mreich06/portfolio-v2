@@ -1,5 +1,5 @@
 .button {
-  border-radius: 8px;
+  border-radius: 0.2rem;
   padding: 0.4rem 0.6rem;
 }
 
@@ -23,7 +23,8 @@
 }
 
 .bold {
-  font-weight: var(--weight-bold);
+  font-weight: 800;
+  font-size: var(--font-sans-sm);
 }
 
 .upperCase {
