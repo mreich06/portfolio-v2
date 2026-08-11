@@ -7,7 +7,7 @@ import HobbyBadge from '../../components/HobbyBadge';
 const About = () => {
   return (
     <div>
-      <SectionHeader />
+      <SectionHeader sectionNumber={'01. About Me'} title={'My journey'} />
 
       <div className={styles.container}>
         <div className={styles.leftCol}>
@@ -28,9 +28,11 @@ const About = () => {
         <div className={styles.terminalContainer}>
           <div className={styles.terminalHeader}>
             <div className={styles.terminalDots}>
-              <span style={{ color: '#ff5f56' }}>●</span>
-              <span style={{ color: '#ffbd2e' }}>●</span>
-              <span style={{ color: '#27c93f' }}>●</span>
+              {['#ff5f56', '#ffbd2e', '#27c93f'].map((color, index) => (
+                <span key={index} style={{ color }}>
+                  ●
+                </span>
+              ))}
             </div>
             <div className={styles.terminalHeaderText}>my_info.sh</div>
           </div>
