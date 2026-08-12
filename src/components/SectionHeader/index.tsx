@@ -1,13 +1,19 @@
-import React from 'react';
 import styles from './SectionHeader.module.css';
+import Text from '../Text';
 
-const SectionHeader = () => {
+interface SectionHeaderProps {
+  sectionNumber: string;
+  title: string;
+}
+const SectionHeader = ({ sectionNumber, title }: SectionHeaderProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.divider} />
       <div className={styles.titleSection}>
-        <h5 className="color-cyan font-mono-xs">01. About Me</h5>
-        <h1 className="font-sans-2xl color-white bold weight-heavy">My journey</h1>
+        <Text variant="eyebrow" as="h2">
+          {sectionNumber}
+        </Text>
+        <Text variant="h2">{title}</Text>
       </div>
     </div>
   );
