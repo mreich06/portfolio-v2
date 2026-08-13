@@ -10,12 +10,22 @@ const SectionHeader = ({ sectionNumber, title }: SectionHeaderProps) => {
     <div className={styles.container}>
       <div className={styles.divider} />
       <div className={styles.titleSection}>
-        <Text variant="eyebrow" font="mono" as="h2">
-          {sectionNumber}
-        </Text>
-        <Text variant="h2" font="sans">
-          {title}
-        </Text>
+        <div className={styles.left}>
+          <Text variant="eyebrow" font="mono" as="h2">
+            {sectionNumber}
+          </Text>
+          <Text variant="h2" font="sans">
+            {title}
+          </Text>
+        </div>
+        <div className={styles.right}>
+          <Text variant="xxs" font="mono" color="muted">
+            ~/projects/featured
+          </Text>
+          <Text variant="xxs" font="mono" color="muted">
+            3 of 12 visible
+          </Text>
+        </div>
       </div>
     </div>
   );
