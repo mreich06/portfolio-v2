@@ -12,14 +12,14 @@ interface InputFieldProps {
 
 const InputField = ({ id, type, value, header, input, ...props }: InputFieldProps) => {
   return (
-    <div>
-      <Text variant="xs" font="sans" styles={'gap: 1rem;'}>
+    <div className={styles.field}>
+      <Text variant="xs" font="mono" styles={styles.label}>
         {header}
       </Text>
       {input ? (
-        <input id={id} type={type} value={value} required {...props} />
+        <input id={id} type={type} value={value} required className={styles.input} {...props} />
       ) : (
-        <textarea id={id} value={value} placeholder="Let's chat!" required {...props} />
+        <textarea id={id} value={value} placeholder="Let's chat!" required className={`${styles.input} ${styles.textarea}`} {...props} />
       )}
     </div>
   );

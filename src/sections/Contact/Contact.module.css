@@ -4,6 +4,8 @@
 
 .columns {
   display: flex;
+  align-items: flex-start;
+  gap: 3rem;
 }
 
 .line {
@@ -26,7 +28,11 @@
   text-align: start;
   flex-direction: column;
   gap: 1rem;
-  width: 50%;
+  flex: 1;
+}
+
+.call {
+  gap: 0.5rem;
 }
 
 @media (max-width: 767px) {

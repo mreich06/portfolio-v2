@@ -1,3 +1,12 @@
+.formContainer {
+  flex: 1;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -5,17 +14,42 @@
   gap: 1rem;
 }
 
-.formContainer {
-  background: var(--muted);
-  padding: 1rem;
-  width: 50%;
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
-#name,
-#email,
-message {
-  background: none;
-  border: 0.5px solid white;
-  display: flex;
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.input {
   width: 100%;
+  box-sizing: border-box;
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
 }

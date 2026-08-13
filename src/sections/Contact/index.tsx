@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import SectionHeader from '../../components/SectionHeader';
 import Text from '../../components/Text';
 import styles from './Contact.module.css';
@@ -22,14 +23,20 @@ const Contact = () => {
           <div className={styles.contactInfo}>
             {contactInfo.map(({ key, value }, index) => (
               <div key={index} className={styles.line}>
-                <Text variant="xxs" font="mono" color="muted">
+                <Text variant="xs" font="mono" color="muted">
                   {`${key}:`}
                 </Text>
-                <Text variant="xxs" font="mono" color="cyan">
+                <Text variant="xs" font="mono" color="cyan">
                   {value}
                 </Text>
               </div>
             ))}
+          </div>
+          <div className={styles.call}>
+            <Text variant="xs" font="sans" color="muted">
+              Rather have a call?
+            </Text>
+            <Button title={'schedule a 30 min call'} />
           </div>
         </div>
         <ContactForm />

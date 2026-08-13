@@ -5,7 +5,7 @@
 }
 
 .primaryOutline {
-  border: 0.8px solid var(--card);
+  border: 0.7px solid var(--card);
   color: var(--card);
 }
 
@@ -15,7 +15,7 @@
 }
 
 .outlineSecondary {
-  border: 0.8px solid var(--accent);
+  border: 0.7px solid var(--accent);
   color: var(--text);
 }
 
