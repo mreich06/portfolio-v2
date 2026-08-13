@@ -1,10 +1,11 @@
 .button {
-  border-radius: 0.2rem;
-  padding: 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  letter-spacing: 0.04em;
 }
 
 .primaryOutline {
-  border: 1px solid var(--card);
+  border: 0.8px solid var(--card);
   color: var(--card);
 }
 
@@ -14,7 +15,7 @@
 }
 
 .outlineSecondary {
-  border: 1px solid var(--accent);
+  border: 0.8px solid var(--accent);
   color: var(--text);
 }
 
@@ -23,8 +24,8 @@
 }
 
 .bold {
-  font-weight: 800;
-  font-size: var(--font-sans-sm);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
 }
 
 .upperCase {

@@ -1,0 +1,71 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  gap: 0.85rem;
+  overflow: hidden;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.card:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--primary);
+}
+
+.imageWrapper {
+  margin: -1rem -1rem 0;
+  height: 130px;
+  background: linear-gradient(135deg, var(--card-bg-hover), var(--input));
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.iconLink {
+  color: var(--muted);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.iconLink:hover {
+  color: var(--primary);
+}
+
+.description {
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: auto;
+}

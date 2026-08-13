@@ -69,7 +69,7 @@ const Header = () => {
           <div ref={underlineRef} className={styles.activeUnderline} />
         </ul>
       </nav>
-      <Button className={styles.contactButton} title={'Get in touch'} />
+      <Button variant="outline-secondary" className={styles.contactButton} title={'Get in touch'} />
       <button className={styles.mobileMenuButton} onClick={() => setIsModalOpen(!isModalOpen)}>
         <Menu className={styles.menuIcon} size={30} />
       </button>

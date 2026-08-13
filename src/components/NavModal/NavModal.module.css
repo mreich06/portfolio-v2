@@ -9,7 +9,7 @@
   z-index: 999;
   border: 1px solid var(--border);
   border-radius: 5px;
-  background: var(--primary-foreground);
+  background: var(--card-bg);
 
   display: flex;
   flex-direction: column;
