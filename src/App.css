@@ -26,14 +26,17 @@
   --text-white-70: #bbbec2; /* #FFFFFF @ 70% */
   --text-white-50: #8e9399; /* #FFFFFF @ 50% */
 
-  /* Font Sizes, matches Figma sizing */
-  --text-xs: 0.7rem; /* 13px */
-  --text-sm: 1rem; /* 16px */
-  --text-base: 0.8rem; /* 18px */
-  --text-lg: 1rem; /* 20px */
-  --text-xl: 1.25rem; /* 24px */
-  --text-2xl: 1.8rem; /* 50px */
-  --text-3xl: 2.5rem;
+  /* Font Sizes — ascending scale, 1rem = 16px */
+  --text-xs: 0.8125rem; /* 13px — labels, eyebrows */
+  --text-sm: 0.875rem; /* 14px — small body, buttons */
+  --text-base: 1rem; /* 16px — body copy */
+  --text-lg: 1.125rem; /* 18px — card titles */
+  --text-xl: 1.25rem; /* 20px — subtitles */
+  --text-2xl: 1.875rem; /* 30px — section headings */
+  --text-3xl: 3rem; /* 48px — hero name */
+
+  /* Borders — 1px with low opacity reads thinner than solid hex colors */
+  --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
 body {
@@ -82,8 +85,9 @@ button {
 .font-sans-base {
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  font-weight: var(--weight-light);
-} /* 18px */
+  font-weight: 400;
+  line-height: 1.5;
+} /* 16px */
 .font-sans-xs {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -95,11 +99,17 @@ button {
 .font-mono-lg {
   font-family: var(--font-mono);
   font-size: var(--text-lg);
-} /* 20px */
+} /* 18px */
 .font-mono-sm {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-} /* 16px */
+} /* 14px */
+.font-mono-xs {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+} /* 13px */
 
 /* Weight & Transformation Utilities */
 .weight-bold {

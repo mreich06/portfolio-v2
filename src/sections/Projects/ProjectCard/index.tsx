@@ -1,5 +1,7 @@
-import Button from '../../../components/Button';
-import type { Tag } from '../../../constants';
+import Text from '../../../components/Text';
+import type { Tag as TagType } from '../../../constants';
+import Tag from '../../../components/Tag';
+
 import styles from './ProjectCard.module.css';
 
 export interface ProjectCardProps {
@@ -7,7 +9,7 @@ export interface ProjectCardProps {
   imageAltText: string;
   title: string;
   description: string;
-  tags: Tag[];
+  tags: TagType[];
   githubUrl?: string;
   liveUrl?: string;
 }
@@ -20,7 +22,10 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
         </div>
       )}
       <div className={styles.cardHeader}>
-        <h3 className={`${styles.title} font-sans-lg weight-bold color-white`}>{title}</h3>
+        <Text variant="h3" styles={styles.title}>
+          {title}
+        </Text>
+
         <div className={styles.links}>
           {githubUrl && (
             <a href={githubUrl} target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
@@ -34,13 +39,13 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
           )}
         </div>
       </div>
-      <p className={`${styles.description} font-sans-base color-white-70`}>{description}</p>
+      <Text variant="body" color="white-70" styles={styles.description}>
+        {description}
+      </Text>
 
       <div className={styles.tags}>
         {tags.map((tag) => (
-          <span key={tag} className={`${styles.tag} font-mono-sm`}>
-            {tag}
-          </span>
+          <Tag title={tag} />
         ))}
       </div>
     </div>
