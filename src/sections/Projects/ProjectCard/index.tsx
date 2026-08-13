@@ -19,7 +19,7 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
     <div className={styles.card}>
       <div className={styles.imageWrapper}>{image && <img className={styles.image} src={image} alt={imageAltText} />}</div>
       <div className={styles.cardHeader}>
-        <Text variant="h3" styles={styles.title}>
+        <Text variant="h3" font="sans" styles={styles.title}>
           {title}
         </Text>
 
@@ -36,7 +36,7 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
           )}
         </div>
       </div>
-      <Text variant="xs" color="white-70" styles={styles.description}>
+      <Text variant="xs" font="sans" color="white-70" styles={styles.description}>
         {description}
       </Text>
       <TagSection tags={tags} />

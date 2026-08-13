@@ -8,13 +8,13 @@ const Hero = () => {
     <div className={styles.hero}>
       <div className={styles.heroText}>
         <h5 className="font-sans-lg color-cyan">Hello, I'm</h5>
-        <Text variant="h1" color="white">
+        <Text variant="h1" font="sans" color="white">
           Maya Reich
         </Text>
-        <Text variant="h3" color="muted">
+        <Text variant="h3" font="sans" color="muted">
           Snowboarding enthusiast on a code journey
         </Text>
-        <Text variant="body" color="white-70">
+        <Text variant="body" font="sans" color="white-70">
           I am a detail-oriented and highly adaptable Full Stack Web and Mobile Software Engineer with 4 years of experience developing enterprise
           applications...
         </Text>

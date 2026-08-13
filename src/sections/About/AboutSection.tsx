@@ -8,10 +8,10 @@ const AboutSection = ({ title, description }: AboutProps) => {
   return (
     <div>
       <div className={styles.sectionContainer}>
-        <Text variant="h3" color="white">
+        <Text variant="h3" font="sans" color="white">
           {title}
         </Text>
-        <Text variant="xs" color="white-70">
+        <Text variant="xs" font="sans" color="white-70">
           {description}
         </Text>
       </div>

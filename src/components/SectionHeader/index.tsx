@@ -10,10 +10,12 @@ const SectionHeader = ({ sectionNumber, title }: SectionHeaderProps) => {
     <div className={styles.container}>
       <div className={styles.divider} />
       <div className={styles.titleSection}>
-        <Text variant="eyebrow" as="h2">
+        <Text variant="eyebrow" font="mono" as="h2">
           {sectionNumber}
         </Text>
-        <Text variant="h2">{title}</Text>
+        <Text variant="h2" font="sans">
+          {title}
+        </Text>
       </div>
     </div>
   );

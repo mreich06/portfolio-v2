@@ -1,6 +1,13 @@
+.sans {
+  font-family: var(--font-sans);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
 .eyebrow {
   margin: 0;
-  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -10,7 +17,6 @@
 
 .h1 {
   margin: 0;
-  font-family: var(--font-sans);
   font-size: var(--text-3xl);
   font-weight: var(--weight-semibold);
   letter-spacing: 0.005rem;
@@ -19,7 +25,6 @@
 
 .h2 {
   margin: 0;
-  font-family: var(--font-sans);
   font-size: var(--text-2xl);
   font-weight: var(--weight-semibold);
   letter-spacing: 0.005rem;
@@ -27,28 +32,33 @@
 }
 .h3 {
   margin: 0;
-  font-family: var(--font-sans);
   font-size: var(--text-lg);
   font-weight: var(--weight-semibold);
   letter-spacing: 0.002rem;
 }
 
 .body {
-  font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: 400;
   line-height: 1.5;
 }
 
 .xs {
-  font-family: var(--font-sans);
+  margin: 0;
   font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
   line-height: 1.5;
-  font-weight: var(--weight-light);
+}
+
+.xxs {
+  margin: 0;
+  font-size: var(--text-2xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
 }
 
 .button {
-  font-family: var(--font-sans);
   font-size: var(--text-sm);
   font-weight: 500;
   display: inline-flex;
@@ -65,7 +75,6 @@
 }
 
 .tag {
-  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 400;
   display: inline-block;
