@@ -29,7 +29,8 @@
   --text-white-50: #8e9399; /* #FFFFFF @ 50% */
 
   /* Font Sizes — ascending scale, 1rem = 16px */
-  --text-xs: 0.6875rem; /* 11px — labels, eyebrows */
+  --text-2xs: 0.5rem; /* 8px — micro labels, terminal meta */
+  --text-xs: 0.625rem; /* 10px — labels, eyebrows */
   --text-sm: 0.75rem; /* 12px — small body, buttons */
   --text-base: 0.875rem; /* 14px — body copy */
   --text-lg: 0.9375rem; /* 15px — card titles */
