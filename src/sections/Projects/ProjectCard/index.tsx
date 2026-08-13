@@ -3,6 +3,7 @@ import type { Tag as TagType } from '../../../constants';
 import Tag from '../../../components/Tag';
 
 import styles from './ProjectCard.module.css';
+import Button from '../../../components/Button';
 
 export interface ProjectCardProps {
   image: string;
@@ -16,11 +17,7 @@ export interface ProjectCardProps {
 const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl, liveUrl }: ProjectCardProps) => {
   return (
     <div className={styles.card}>
-      {image && (
-        <div className={styles.imageWrapper}>
-          <img className={styles.image} src={image} alt={imageAltText} />
-        </div>
-      )}
+      <div className={styles.imageWrapper}>{image && <img className={styles.image} src={image} alt={imageAltText} />}</div>
       <div className={styles.cardHeader}>
         <Text variant="h3" styles={styles.title}>
           {title}
@@ -39,7 +36,7 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
           )}
         </div>
       </div>
-      <Text variant="body" color="white-70" styles={styles.description}>
+      <Text variant="xs" color="white-70" styles={styles.description}>
         {description}
       </Text>
 
@@ -47,6 +44,10 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
         {tags.map((tag) => (
           <Tag title={tag} />
         ))}
+      </div>
+      <div className={styles.buttons}>
+        <Button variant="solid-primary" title={'GitHub'} />
+        <Button title={'See Live'} />
       </div>
     </div>
   );
