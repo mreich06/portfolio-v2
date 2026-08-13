@@ -45,7 +45,7 @@ export const ProjectCards: ProjectCardProps[] = [
     tags: ['React', 'TypeScript', 'Tailwind', 'Redux', 'Next.js'],
   },
   {
-    image: '',
+    image: relokit,
     imageAltText: 'Relokit',
     title: 'Relokit',
     description:
