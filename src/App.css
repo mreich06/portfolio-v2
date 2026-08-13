@@ -151,7 +151,7 @@ button {
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(1.25rem, 10vw, 7rem);
+  padding: 0 clamp(1.25rem, 16vw, 7rem);
 }
 
 /* Font weights */

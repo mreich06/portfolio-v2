@@ -41,7 +41,8 @@
 }
 
 .photo {
-  max-width: 300px;
+  width: 100%;
+  max-width: clamp(180px, 22vw, 300px);
   height: auto; /* preserve aspect ratio */
   object-fit: cover; /* if a fixed height is ever set, crop instead of squash */
   aspect-ratio: 448 / 456;
