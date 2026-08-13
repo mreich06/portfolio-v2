@@ -1,6 +1,7 @@
 import SectionHeader from '../../components/SectionHeader';
 import Text from '../../components/Text';
 import styles from './Contact.module.css';
+import ContactForm from './ContactForm';
 
 const contactInfo = [
   { key: 'location', value: 'Amsterdam, NL' },
@@ -11,26 +12,29 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <>
+    <div className={styles.contactContainer}>
       <SectionHeader sectionNumber={'05. Contact'} title={"Let's build something."} />
-      <div className={styles.container}>
-        <Text variant="body" font="mono" styles={'color: var(--primary)'}>
-          mayareich0606@gmail.com
-        </Text>
-        <div className={styles.contactInfo}>
-          {contactInfo.map(({ key, value }, index) => (
-            <div key={index} className={styles.line}>
-              <Text variant="xxs" font="sans" color="muted">
-                {`${key}:   `}
-              </Text>
-              <Text variant="xxs" font="sans" color="cyan">
-                {value}
-              </Text>
-            </div>
-          ))}
+      <div className={styles.columns}>
+        <div className={styles.container}>
+          <Text variant="body" font="mono" styles={'color: var(--primary)'}>
+            mayareich0606@gmail.com
+          </Text>
+          <div className={styles.contactInfo}>
+            {contactInfo.map(({ key, value }, index) => (
+              <div key={index} className={styles.line}>
+                <Text variant="xxs" font="mono" color="muted">
+                  {`${key}:`}
+                </Text>
+                <Text variant="xxs" font="mono" color="cyan">
+                  {value}
+                </Text>
+              </div>
+            ))}
+          </div>
         </div>
+        <ContactForm />
       </div>
-    </>
+    </div>
   );
 };
 

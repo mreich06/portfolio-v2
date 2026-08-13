@@ -1,0 +1,43 @@
+import { useState, type ChangeEventHandler } from 'react';
+import styles from './ContactForm.module.css';
+import Text from './../../../components/Text';
+interface InputFieldProps {
+  id: string;
+  type: string;
+  value: string;
+  input?: boolean;
+  header: string;
+  onChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+}
+
+const InputField = ({ id, type, value, header, input, ...props }: InputFieldProps) => {
+  return (
+    <div>
+      <Text variant="xs" font="sans" styles={'gap: 1rem;'}>
+        {header}
+      </Text>
+      {input ? (
+        <input id={id} type={type} value={value} required {...props} />
+      ) : (
+        <textarea id={id} value={value} placeholder="Let's chat!" required {...props} />
+      )}
+    </div>
+  );
+};
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  return (
+    <div className={styles.formContainer}>
+      <form className={styles.form}>
+        <InputField id={'name'} type={'text'} input={true} value={name} header="Name: " onChange={(e) => setName(e.target.value)} />
+        <InputField id={'email'} type={'email'} input={true} value={email} header="Email: " onChange={(e) => setEmail(e.target.value)} />
+        <InputField id={'message'} type={'textarea'} value={message} header="Message: " onChange={(e) => setMessage(e.target.value)} />
+      </form>
+    </div>
+  );
+};
+
+export default ContactForm;

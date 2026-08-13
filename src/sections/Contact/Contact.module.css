@@ -1,3 +1,11 @@
+.contactContainer {
+  display: block;
+}
+
+.columns {
+  display: flex;
+}
+
 .line {
   display: flex;
 }
@@ -18,4 +26,11 @@
   text-align: start;
   flex-direction: column;
   gap: 1rem;
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  .contactContainer {
+    display: flex;
+  }
 }
