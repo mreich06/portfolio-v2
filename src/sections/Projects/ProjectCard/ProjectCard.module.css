@@ -57,6 +57,7 @@
 .description {
   margin: 0;
   line-height: 1.5;
+  text-align: left;
 }
 
 .tags {
@@ -64,13 +65,4 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: auto; /* pushes tags to the bottom of the card */
-}
-
-.tag {
-  padding: 0.25rem 0.6rem;
-  background: var(--tag-bg);
-  border: 1px solid var(--tag-border);
-  border-radius: 4px;
-  color: var(--primary);
-  font-size: var(--text-xs);
 }
