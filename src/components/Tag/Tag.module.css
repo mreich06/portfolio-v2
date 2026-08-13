@@ -1,0 +1,8 @@
+.tag {
+  color: var(--primary);
+  background: var(--input);
+  border-radius: 0.1rem;
+  font-family: var(--font-mono);
+  padding: 0 0.3rem;
+  font-size: var(--text-xs);
+}
