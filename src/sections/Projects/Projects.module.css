@@ -1,5 +1,15 @@
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.allProjectsContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.allProjects {
+  color: var(--primary);
+  font-size: var(--text-md);
 }

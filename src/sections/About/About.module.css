@@ -17,9 +17,11 @@
   background-color: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1.75rem;
+  padding: 0.2rem 1.75rem;
+  height: 100%;
   font-family: var(--font-mono);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
+  line-height: 1.9;
   align-items: flex-start;
 }
 
@@ -53,18 +55,20 @@
 
 .terminalHeaderText {
   color: var(--muted);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.04em;
 }
 
 .terminalHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 0.75rem;
-  margin-bottom: 1rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+  margin-left: -1.75rem;
+  margin-right: -1.75rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
   width: calc(100%);
   border-bottom: 1px solid var(--border);
 }
@@ -79,24 +83,24 @@
 
 .terminalFooter {
   border-top: 1px solid var(--border);
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  margin-top: auto; /* eats leftover flex space, pinning this to the bottom */
+  padding-top: 0.4rem;
   width: calc(100%);
   color: var(--muted);
-  font-size: 0.7rem;
-  line-height: 0.9rem;
+  font-size: var(--text-2xs);
+  line-height: 1.5;
   text-align: left;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  margin-left: -1.75rem;
+  margin-right: -1.75rem;
+  padding-bottom: 0rem;
 }
 
 .terminalDots {
   display: flex;
-
-  gap: 0.4rem;
-  font-size: 1.4rem;
+  gap: 0.3rem;
+  font-size: 0.65rem;
 }
 
 .beyondHeader {

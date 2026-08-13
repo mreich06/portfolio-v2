@@ -1,9 +1,9 @@
 import Text from '../../../components/Text';
 import type { Tag as TagType } from '../../../constants';
-import Tag from '../../../components/Tag';
 
 import styles from './ProjectCard.module.css';
 import Button from '../../../components/Button';
+import TagSection from '../../../components/TagSection';
 
 export interface ProjectCardProps {
   image: string;
@@ -39,12 +39,7 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
       <Text variant="xs" color="white-70" styles={styles.description}>
         {description}
       </Text>
-
-      <div className={styles.tags}>
-        {tags.map((tag) => (
-          <Tag title={tag} />
-        ))}
-      </div>
+      <TagSection tags={tags} />
       <div className={styles.buttons}>
         <Button variant="solid-primary" title={'GitHub'} />
         <Button title={'See Live'} />

@@ -11,6 +11,11 @@ const Projects = () => {
           <ProjectCard key={title} {...{ title, description, image, imageAltText, tags }} />
         ))}
       </div>
+      <div className={styles.allProjectsContainer}>
+        <a className={styles.allProjects} href="https://github.com/mreich06" aria-label="github">
+          View all projects on GitHub
+        </a>
+      </div>
     </div>
   );
 };

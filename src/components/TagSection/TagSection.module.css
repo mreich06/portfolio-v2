@@ -1,5 +1,11 @@
-.tag {
-  color: var(--primary);
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.showMore {
+  color: var(--muted);
   background: var(--input);
   border-radius: 0.1rem;
   font-family: var(--font-mono);
