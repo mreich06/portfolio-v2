@@ -21,6 +21,16 @@
   text-decoration: none;
 }
 
+.logo {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
 .navItems {
   display: flex;
   list-style: none;
@@ -33,6 +43,13 @@
 .navItemWrapper {
   display: inline-flex;
   align-items: center;
+}
+
+/* Marker class: a hook so the sliding underline effect can find the
+   active <li> via querySelector. Declaration below is redundant with
+   .navItemWrapper — it exists only so this ruleset isn't empty. */
+.activeItemWrapper {
+  display: inline-flex;
 }
 
 .navItem {
