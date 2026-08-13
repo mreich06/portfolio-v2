@@ -18,7 +18,7 @@
 }
 
 .imageWrapper {
-  margin: -1.75rem -1.75rem 0;
+  margin: -1rem -1rem 0;
   height: 130px;
   background: linear-gradient(135deg, var(--card-bg-hover), var(--input));
 }
@@ -65,6 +65,7 @@
 
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
+  margin-top: auto;
 }
