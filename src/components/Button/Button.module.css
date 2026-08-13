@@ -24,7 +24,7 @@
 
 .bold {
   font-weight: 800;
-  font-size: var(--font-sans-sm);
+  font-size: var(--text-sm);
 }
 
 .upperCase {

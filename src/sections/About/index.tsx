@@ -53,6 +53,7 @@ const About = () => {
       {/* Bottom Beyond the job section */}
       <div className={styles.bottomSection}>
         <div className={styles.beyondHeader}>
+          {/* change text */}
           <h3>Beyond the job</h3>
           <h5>INTERESTS AND VALUES</h5>
         </div>

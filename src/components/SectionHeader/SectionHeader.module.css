@@ -10,6 +10,9 @@
   background: var(--border);
 }
 .titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   text-align: left;
   margin-top: 1rem;
 }
