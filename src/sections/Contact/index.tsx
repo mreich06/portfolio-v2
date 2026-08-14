@@ -7,7 +7,6 @@ import ContactForm from './ContactForm';
 import { PopupModal } from 'react-calendly';
 
 type ContactInfoType = { key: string; value: string; link?: string };
-
 const contactInfo: ContactInfoType[] = [
   { key: 'location', value: 'Amsterdam, NL' },
   { key: 'status', value: 'accepting work · Q3 2026' },
