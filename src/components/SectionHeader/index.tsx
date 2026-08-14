@@ -6,8 +6,9 @@ interface SectionHeaderProps {
   title: string;
   sectionDescription: string;
   descriptionSecondLine: string;
+  secondLineHighlight?: boolean;
 }
-const SectionHeader = ({ sectionNumber, title, sectionDescription, descriptionSecondLine }: SectionHeaderProps) => {
+const SectionHeader = ({ sectionNumber, title, sectionDescription, descriptionSecondLine, secondLineHighlight }: SectionHeaderProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.divider} />
@@ -24,7 +25,7 @@ const SectionHeader = ({ sectionNumber, title, sectionDescription, descriptionSe
           <Text variant="xxs" font="mono" color="muted">
             {sectionDescription}
           </Text>
-          <Text variant="xxs" font="mono" color="muted">
+          <Text variant="xxs" font="mono" color={secondLineHighlight ? 'cyan' : 'muted'}>
             {descriptionSecondLine}
           </Text>
         </div>
