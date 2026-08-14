@@ -5,7 +5,7 @@ import Header from './index';
 
 // Mock the Button to isolate Header
 vi.mock('../Button', () => ({
-  default: ({ title, className }: { title: string; className?: string }) => <button className={className}>{title}</button>,
+  default: ({ children, className }: { children: React.ReactNode; className?: string }) => <button className={className}>{children}</button>,
 }));
 
 vi.mock('../../assets/logo.svg', () => ({
@@ -29,7 +29,7 @@ describe('Header Component', () => {
     expect(screen.queryByText('Contact')).not.toBeInTheDocument();
 
     // check that clcking menu button opens modal
-    const mobileMenu = screen.getByRole('button', { name: '' });
+    const mobileMenu = screen.getByRole('button', { name: 'Toggle menu' });
     fireEvent.click(mobileMenu);
 
     // Modal Opened State
