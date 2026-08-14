@@ -4,8 +4,13 @@ import styles from './Projects.module.css';
 import { ProjectCards } from '../../constants';
 const Projects = () => {
   return (
-    <div>
-      <SectionHeader sectionNumber={'03. Projects '} title={'Featured Work'} />
+    <>
+      <SectionHeader
+        sectionNumber={'03. Projects '}
+        title={'Featured Work'}
+        sectionDescription={'~/projects/featured'}
+        descriptionSecondLine={'3 of 5 visible'}
+      />
       <div className={styles.projectsGrid}>
         {ProjectCards.map(({ title, description, image, imageAltText, tags }) => (
           <ProjectCard key={title} {...{ title, description, image, imageAltText, tags }} />
@@ -16,7 +21,7 @@ const Projects = () => {
           View all projects on GitHub
         </a>
       </div>
-    </div>
+    </>
   );
 };
 

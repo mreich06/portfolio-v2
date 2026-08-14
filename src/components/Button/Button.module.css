@@ -5,7 +5,7 @@
 }
 
 .primaryOutline {
-  border: 0.8px solid var(--card);
+  border: 0.7px solid var(--card);
   color: var(--card);
 }
 
@@ -15,12 +15,32 @@
 }
 
 .outlineSecondary {
-  border: 0.8px solid var(--accent);
+  border: 0.7px solid var(--accent);
   color: var(--text);
 }
 
 .solidSecondary {
   background: var(--accent);
+}
+
+.terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--card-bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  color: var(--text);
+  transition: border-color 0.2s ease;
+}
+
+.terminal:hover {
+  border-color: var(--primary);
+}
+
+.icon {
+  color: var(--muted);
 }
 
 .bold {

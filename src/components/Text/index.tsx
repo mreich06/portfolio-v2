@@ -1,11 +1,14 @@
 import type { ElementType, ReactNode } from 'react';
 import styles from './Text.module.css';
 
-type TextVariant = 'eyebrow' | 'h1' | 'h2' | 'h3' | 'body' | 'xs' | 'button' | 'tag';
+type TextVariant = 'eyebrow' | 'h1' | 'h2' | 'h3' | 'body' | 'xs' | 'xxs' | 'button' | 'tag';
+
+type FontVariant = 'sans' | 'mono';
 
 type ColorVariant = 'default' | 'cyan' | 'muted' | 'white' | 'white-70' | 'white-50';
 interface TextProps {
   variant: TextVariant;
+  font: FontVariant;
   color?: ColorVariant;
   as?: ElementType;
   children: ReactNode;
@@ -21,7 +24,13 @@ const variantStyles: Record<TextVariant, string> = {
   body: styles.body,
   button: styles.button,
   xs: styles.xs,
+  xxs: styles.xxs,
   tag: styles.tag,
+};
+
+const fontStyles: Record<FontVariant, string> = {
+  sans: styles.sans,
+  mono: styles.mono,
 };
 
 const colorClasses: Record<ColorVariant, string> = {
@@ -40,14 +49,19 @@ const defaultElements: Record<TextVariant, ElementType> = {
   h3: 'h3',
   body: 'p',
   xs: 'p',
+  xxs: 'p',
   button: 'button',
   tag: 'span',
 };
 
-const Text = ({ variant, color = 'default', as, children, className = '', styles = '' }: TextProps) => {
+const Text = ({ variant, font, color = 'default', as, children, className = '', styles = '' }: TextProps) => {
   const Component = as ?? defaultElements[variant];
 
-  return <Component className={`${variantStyles[variant]} ${colorClasses[color]} ${styles} ${className}`.trim()}>{children}</Component>;
+  return (
+    <Component className={`${variantStyles[variant]} ${fontStyles[font]} ${colorClasses[color]} ${styles} ${className}`.trim()}>
+      {children}
+    </Component>
+  );
 };
 
 export default Text;
