@@ -40,7 +40,7 @@ const Contact = () => {
           </div>
           <div className={styles.scheduleCall}>
             <div>
-              <Text variant="xs" font="sans" color="muted">
+              <Text variant="xs" font="sans">
                 Prefer to chat face-to-face?
               </Text>
             </div>

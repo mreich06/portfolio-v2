@@ -34,8 +34,9 @@
 .scheduleCall {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
   align-items: flex-start;
+  margin-top: 1rem;
 }
 
 @media (max-width: 767px) {
@@ -46,6 +47,7 @@
 
   .columns {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .scheduleCall {
