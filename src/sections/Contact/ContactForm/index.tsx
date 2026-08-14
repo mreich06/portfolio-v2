@@ -36,9 +36,7 @@ const ContactForm = () => {
         <InputField id={'name'} type={'text'} input={true} value={name} header="Name: " onChange={(e) => setName(e.target.value)} />
         <InputField id={'email'} type={'email'} input={true} value={email} header="Email: " onChange={(e) => setEmail(e.target.value)} />
         <InputField id={'message'} type={'textarea'} value={message} header="Message: " onChange={(e) => setMessage(e.target.value)} />
-        <div>
-          <Button>Send message</Button>
-        </div>
+        <Button className={styles.button}>Send message</Button>
       </form>
     </div>
   );

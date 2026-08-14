@@ -7,7 +7,12 @@ import HobbyBadge from '../../components/HobbyBadge';
 const About = () => {
   return (
     <div>
-      <SectionHeader sectionNumber={'01. About Me'} title={'My journey'} />
+      <SectionHeader
+        sectionNumber={'01. About Me'}
+        title={'My journey'}
+        sectionDescription={'~/about'}
+        descriptionSecondLine={'work && personal life'}
+      />
 
       <div className={styles.container}>
         <div className={styles.leftCol}>

@@ -14,7 +14,12 @@ const contactInfo = [
 const Contact = () => {
   return (
     <div className={styles.contactContainer}>
-      <SectionHeader sectionNumber={'05. Contact'} title={"Let's build something."} />
+      <SectionHeader
+        sectionNumber={'05. Contact'}
+        title={"Let's create something together."}
+        sectionDescription={'~/contact'}
+        descriptionSecondLine={'Usually replies within 24 hours'}
+      />
       <div className={styles.columns}>
         <div className={styles.container}>
           <Text variant="body" font="mono" styles={'color: var(--primary)'}>
@@ -32,10 +37,12 @@ const Contact = () => {
               </div>
             ))}
           </div>
-          <div className={styles.call}>
-            <Text variant="xs" font="sans" color="muted">
-              Prefer to chat face-to-face?
-            </Text>
+          <div className={styles.scheduleCall}>
+            <div>
+              <Text variant="xs" font="sans" color="muted">
+                Prefer to chat face-to-face?
+              </Text>
+            </div>
             <Button>book a 30 min video call</Button>
           </div>
         </div>

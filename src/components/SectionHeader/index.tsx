@@ -4,8 +4,10 @@ import Text from '../Text';
 interface SectionHeaderProps {
   sectionNumber: string;
   title: string;
+  sectionDescription: string;
+  descriptionSecondLine: string;
 }
-const SectionHeader = ({ sectionNumber, title }: SectionHeaderProps) => {
+const SectionHeader = ({ sectionNumber, title, sectionDescription, descriptionSecondLine }: SectionHeaderProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.divider} />
@@ -20,10 +22,10 @@ const SectionHeader = ({ sectionNumber, title }: SectionHeaderProps) => {
         </div>
         <div className={styles.right}>
           <Text variant="xxs" font="mono" color="muted">
-            ~/projects/featured
+            {sectionDescription}
           </Text>
           <Text variant="xxs" font="mono" color="muted">
-            3 of 12 visible
+            {descriptionSecondLine}
           </Text>
         </div>
       </div>
