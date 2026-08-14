@@ -43,6 +43,7 @@ export const ProjectCards: ProjectCardProps[] = [
     description:
       'An interactive analytics dashboard that visualizes your Spotify listening habits over time. Tracks your top artists, genres, and songs across short, medium, and long-term ranges',
     tags: ['React', 'TypeScript', 'Tailwind', 'Redux', 'Next.js'],
+    githubUrl: 'https://github.com/mreich06/spotify-dashboard',
   },
   {
     image: relokit,
@@ -51,6 +52,7 @@ export const ProjectCards: ProjectCardProps[] = [
     description:
       'A comprehensive relocation assistance platform, providing personalized guidance, document management, and community support for individuals moving abroad',
     tags: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma', 'Auth.js v5', 'Vercel'],
+    githubUrl: 'https://github.com/mreich06/relokit',
   },
   {
     image: portfolioProject,
@@ -59,5 +61,7 @@ export const ProjectCards: ProjectCardProps[] = [
     description:
       'A modern, responsive portfolio website showcasing my projects and skills. Features smooth animations, optimized performance, and a dynamic contact form',
     tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'Node.js', 'Express', 'Nodemailer', 'Vercel', 'Render'],
+    githubUrl: 'https://github.com/mreich06/portfolio',
+    liveUrl: 'https://mayareich.dev',
   },
 ];

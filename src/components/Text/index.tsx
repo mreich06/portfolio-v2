@@ -14,6 +14,7 @@ interface TextProps {
   children: ReactNode;
   className?: string;
   styles?: string;
+  [key: string]: unknown;
 }
 
 const variantStyles: Record<TextVariant, string> = {
@@ -54,11 +55,14 @@ const defaultElements: Record<TextVariant, ElementType> = {
   tag: 'span',
 };
 
-const Text = ({ variant, font, color = 'default', as, children, className = '', styles = '' }: TextProps) => {
+const Text = ({ variant, font, color = 'default', as, children, className = '', styles = '', ...rest }: TextProps) => {
   const Component = as ?? defaultElements[variant];
 
   return (
-    <Component className={`${variantStyles[variant]} ${fontStyles[font]} ${colorClasses[color]} ${styles} ${className}`.trim()}>
+    <Component
+      className={`${variantStyles[variant]} ${fontStyles[font]} ${colorClasses[color]} ${styles} ${className}`.trim()}
+      {...rest}
+    >
       {children}
     </Component>
   );
