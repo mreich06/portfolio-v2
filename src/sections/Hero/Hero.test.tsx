@@ -26,7 +26,7 @@ describe('Hero Component', () => {
     expect(screen.getByText("Hello, I'm")).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /maya reich/i })).toBeInTheDocument();
     expect(screen.getByText('Snowboarding enthusiast on a code journey')).toBeInTheDocument();
-    expect(screen.getByText(/4 years of experience/i)).toBeInTheDocument();
+    expect(screen.getByText(/full-stack software engineer/i)).toBeInTheDocument();
   });
 
   it('renders both action buttons', () => {
