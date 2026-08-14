@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  gap: 4rem;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 20%;
+  flex-shrink: 0;
+  gap: 0.2rem;
+}
+
+.rightCol {
+  flex: 1;
+  min-width: 0;
+}
+
+.experienceContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemContainer {
+  flex-direction: row;
+}
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0rem 0 2rem 0;
+  padding: 0;
+}
+
+.jobTitle {
+  margin-bottom: 1rem;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stackItem {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border-light);
+  background: var(--border);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .container {
+    display: block;
+    margin: 1rem;
+  }
+  .leftCol {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
