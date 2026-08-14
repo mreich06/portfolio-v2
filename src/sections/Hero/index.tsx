@@ -20,8 +20,12 @@ const Hero = () => {
         </Text>
 
         <div className={styles.buttonContainer}>
-          <Button title={'View my work'} variant="solid-primary" bold upperCase />
-          <Button title={'Get in touch'} variant="outline-secondary" bold upperCase />
+          <Button variant="solid-primary" bold upperCase>
+            View my work
+          </Button>
+          <Button variant="outline-secondary" bold upperCase>
+            Get in touch
+          </Button>
         </div>
       </div>
       <div className={styles.heroPhoto}>

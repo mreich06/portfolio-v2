@@ -1,6 +1,7 @@
 import { useState, type ChangeEventHandler } from 'react';
 import styles from './ContactForm.module.css';
 import Text from './../../../components/Text';
+import Button from '../../../components/Button';
 interface InputFieldProps {
   id: string;
   type: string;
@@ -35,6 +36,9 @@ const ContactForm = () => {
         <InputField id={'name'} type={'text'} input={true} value={name} header="Name: " onChange={(e) => setName(e.target.value)} />
         <InputField id={'email'} type={'email'} input={true} value={email} header="Email: " onChange={(e) => setEmail(e.target.value)} />
         <InputField id={'message'} type={'textarea'} value={message} header="Message: " onChange={(e) => setMessage(e.target.value)} />
+        <div>
+          <Button>Send message</Button>
+        </div>
       </form>
     </div>
   );

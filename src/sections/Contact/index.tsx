@@ -34,9 +34,9 @@ const Contact = () => {
           </div>
           <div className={styles.call}>
             <Text variant="xs" font="sans" color="muted">
-              Rather have a call?
+              Prefer to chat face-to-face?
             </Text>
-            <Button title={'schedule a 30 min call'} />
+            <Button>book a 30 min video call</Button>
           </div>
         </div>
         <ContactForm />

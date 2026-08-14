@@ -41,8 +41,8 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
       </Text>
       <TagSection tags={tags} />
       <div className={styles.buttons}>
-        <Button variant="solid-primary" title={'GitHub'} />
-        <Button title={'See Live'} />
+        <Button variant="solid-primary">GitHub</Button>
+        <Button>See Live </Button>
       </div>
     </div>
   );

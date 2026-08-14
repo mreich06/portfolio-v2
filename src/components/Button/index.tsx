@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 type ButtonVariant = 'outline-primary' | 'solid-primary' | 'outline-secondary' | 'solid-secondary' | 'terminal';
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
-  title: string;
+  children: React.ReactNode;
   icon?: ReactNode;
   className?: string;
   variant?: ButtonVariant;
@@ -12,7 +12,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   upperCase?: boolean;
 }
 
-const Button = ({ title, icon, className = '', variant = 'outline-primary', bold = false, upperCase = false, ...props }: ButtonProps) => {
+const Button = ({ children, icon, className = '', variant = 'outline-primary', bold = false, upperCase = false, ...props }: ButtonProps) => {
   const variantStyles: Record<ButtonVariant, string> = {
     'outline-primary': styles.primaryOutline,
     'solid-primary': styles.primarySolid,
@@ -27,7 +27,7 @@ const Button = ({ title, icon, className = '', variant = 'outline-primary', bold
       {...props}
     >
       {icon && <span className={styles.icon}>{icon}</span>}
-      {title}
+      {children}
     </button>
   );
 };
