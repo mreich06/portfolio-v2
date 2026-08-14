@@ -4,13 +4,13 @@ import Hero from './';
 
 // Type definition for mocked button props
 interface ButtonProps {
-  title: string;
+  children: React.ReactNode;
 }
 
 // Mock the Button component to isolate Hero component testing
 vi.mock('../../components/Button', () => {
   return {
-    default: ({ title }: ButtonProps) => <button>{title}</button>,
+    default: ({ children }: ButtonProps) => <button>{children}</button>,
   };
 });
 
