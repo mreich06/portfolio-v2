@@ -14,6 +14,7 @@
   --orange: #e5a35a;
   --text-gray-mono: #3e4d5b;
   --border: rgba(148, 163, 184, 0.1);
+  --border-light: rgba(148, 163, 184, 0.3);
   --input: #0e0f16;
   --ring: #4fd1c5;
   --radius: 0rem;
@@ -31,9 +32,11 @@
   --text-2xs: 0.625rem; /* 10px — micro labels, terminal meta */
   --text-xs: 0.8125rem; /* 13px — labels, eyebrows */
   --text-sm: 0.875rem; /* 14px — small body, buttons */
+  --text-bodySmall: 0.9375rem; /* 15px — between body and xs */
   --text-base: 1rem; /* 16px — body copy */
   --text-lg: 1.0625rem; /* 17px — card titles */
   --text-xl: 1.1875rem; /* 19px — subtitles */
+  --text-subtitle: 1.375rem; /* 22px — between h3 and h2 */
   --text-2xl: 1.75rem; /* 28px — section headings */
   --text-3xl: 2.75rem; /* 44px — hero name */
 

@@ -15,8 +15,9 @@ const Hero = () => {
           Snowboarding enthusiast on a code journey
         </Text>
         <Text variant="body" font="sans" color="white-70">
-          I am a detail-oriented and highly adaptable Full Stack Web and Mobile Software Engineer with 4 years of experience developing enterprise
-          applications...
+          I’m a full-stack software engineer who builds production-ready web and mobile applications from frontend to backend. With experience in
+          React, TypeScript, Node.js, and cloud infrastructure, I care about creating software that is fast, scalable, and genuinely useful, from
+          enterprise applications serving millions of users to products built from the ground up.
         </Text>
 
         <div className={styles.buttonContainer}>

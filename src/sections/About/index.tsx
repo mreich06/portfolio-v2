@@ -1,9 +1,8 @@
 import SectionHeader from '../../components/SectionHeader';
 import styles from './About.module.css';
-import AboutSection from './AboutSection';
 import * as BadgeLogos from '../../assets/BadgeLogos';
 import HobbyBadge from '../../components/HobbyBadge';
-
+import Text from '../../components/Text';
 const About = () => {
   return (
     <div>
@@ -16,18 +15,24 @@ const About = () => {
 
       <div className={styles.container}>
         <div className={styles.leftCol}>
-          <AboutSection
-            title={'Who I am'}
-            description={
-              'I am a detail-oriented and highly adaptable Full Stack Web and Mobile Software Engineer with 4 years of experience developing enterprise applications.'
-            }
-          />
-          <AboutSection
-            title={'Who I am'}
-            description={
-              'I am a detail-oriented and highly adaptable Full Stack Web and Mobile Software Engineer with 4 years of experience developing enterprise applications.'
-            }
-          />
+          <div>
+            <div className={styles.sectionContainer}>
+              <Text variant="h3" font="sans" color="white">
+                Who I am
+              </Text>
+              <Text variant="bodySmall" font="sans" color="white-70">
+                My journey into software started with a Computer Science degree at Middlebury College and has taken me across the U.S., Japan, and the
+                Netherlands. I've worked in very different environments, from a large technology company in San Diego, to Rakuten in Tokyo, to smaller
+                teams in the Netherlands where I've worked across the stack. Working across cultures, teams, and time zones has taught me to adapt
+                quickly, communicate clearly, and approach problems from different perspectives.
+              </Text>
+              <Text variant="bodySmall" font="sans" color="white-70">
+                Outside of code, I like to keep moving and creating. I enjoy running, snowboarding, traveling, and exploring new places and cultures.
+                I also enjoy creative pursuits like drawing and experimenting with design. That curiosity carries into how I approach software: I'm
+                always learning, experimenting, and looking for ways to make things better.
+              </Text>
+            </div>
+          </div>
         </div>
 
         <div className={styles.terminalContainer}>
@@ -42,12 +47,18 @@ const About = () => {
             <div className={styles.terminalHeaderText}>my_info.sh</div>
           </div>
 
-          <div className={styles.terminalInput}>$ whoami</div>
-          <div className={styles.terminalOutput}>maya</div>
-          <div className={styles.terminalInput}>$ pwd</div>
-          <div className={styles.terminalOutput}>/Users/maya/career/lmi</div>
-          <div className={styles.terminalInput}>$ echo $CURRENT_FOCUS</div>
-          <div className={styles.terminalOutput}>Full Stack Web Development</div>
+          {[
+            { command: '$ whoami', output: 'maya' },
+            { command: '$ pwd', output: '/Users/maya/career/lmi' },
+            { command: '$ echo $CURRENT_FOCUS', output: 'Full Stack Web Development' },
+            { command: '$ echo $BASED_IN', output: 'Amsterdam, Netherlands' },
+            { command: '$ echo $INTERESTS', output: 'Web Development · UX · Creative Technology' },
+          ].map(({ command, output }) => (
+            <div key={command} className={styles.terminalLine}>
+              <div className={styles.terminalInput}>{command}</div>
+              <div className={styles.terminalOutput}>{output}</div>
+            </div>
+          ))}
           <div className={styles.terminalFooter}>
             <div>$ status: Available for opportunities</div>
             <div>$ response_time: Usually within 24 hours</div>

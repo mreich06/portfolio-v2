@@ -83,7 +83,7 @@ export const ProjectCards: ProjectCardProps[] = [
 
 export const WorkHistory: ExperienceSectionProps[] = [
   {
-    dates: 'Jan 2026 - Present',
+    dates: 'JAN 2026 - PRESENT',
     company: 'Lean Management Instituut',
     location: 'Zeist, The Netherlands',
     jobTitle: 'Full Stack Software Engineer',
@@ -96,7 +96,7 @@ export const WorkHistory: ExperienceSectionProps[] = [
     stack: ['React', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma', 'Auth.js', 'Zod', 'PHP'],
   },
   {
-    dates: 'Jan 2024 - Jul 2024',
+    dates: 'JAN 2024 - JUL 2024',
     company: 'Rakuten',
     location: 'Tokyo, Japan',
     jobTitle: 'Front-End Software Engineer',
@@ -109,7 +109,7 @@ export const WorkHistory: ExperienceSectionProps[] = [
     stack: ['React', 'TypeScript', 'Jest', 'PlayWright', 'Docker', 'Jenkins'],
   },
   {
-    dates: 'Sept 2019 - Nov 2022',
+    dates: 'SEPT 2019 - NOV 2022',
     company: 'Viasat',
     location: 'San Diego, CA, USA',
     jobTitle: 'Full Stack Software Engineer',

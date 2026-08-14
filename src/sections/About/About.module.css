@@ -45,7 +45,7 @@
   border: 1px solid var(--border);
   border-radius: 7px;
   padding: 1.25rem;
-  gap: 0.4rem;
+  gap: 1rem;
 }
 
 .sectionContainer h3,
@@ -71,6 +71,10 @@
   padding-right: 1.75rem;
   width: calc(100%);
   border-bottom: 1px solid var(--border);
+}
+
+.terminalLine {
+  margin-bottom: 0.6rem;
 }
 
 .terminalInput {
