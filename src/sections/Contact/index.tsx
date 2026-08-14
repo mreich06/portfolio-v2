@@ -19,6 +19,7 @@ const Contact = () => {
         title={"Let's create something together."}
         sectionDescription={'~/contact'}
         descriptionSecondLine={'Usually replies within 24 hours'}
+        secondLineHighlight
       />
       <div className={styles.columns}>
         <div className={styles.container}>

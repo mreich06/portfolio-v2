@@ -53,3 +53,7 @@
   resize: vertical;
   font-family: inherit;
 }
+
+.button {
+  align-self: flex-end;
+}

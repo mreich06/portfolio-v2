@@ -31,12 +31,24 @@
   flex: 1;
 }
 
-.call {
+.scheduleCall {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+  align-items: flex-start;
 }
 
 @media (max-width: 767px) {
   .contactContainer {
     display: flex;
+    flex-direction: column;
+  }
+
+  .columns {
+    flex-direction: column;
+  }
+
+  .scheduleCall {
+    flex-wrap: wrap;
   }
 }
