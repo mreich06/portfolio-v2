@@ -23,6 +23,7 @@
   font-size: var(--text-xs);
   line-height: 1.9;
   align-items: flex-start;
+  text-align: left;
 }
 
 .bottomSection {
