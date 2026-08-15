@@ -25,3 +25,6 @@ dist-ssr
 
 # Type definitions, if ever generated for CSS modules again
 *.module.css.d.ts
+
+# Notes
+NOTES.md
