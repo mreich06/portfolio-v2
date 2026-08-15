@@ -4,7 +4,7 @@ import Text from './../../../components/Text';
 import Button from '../../../components/Button';
 import { z } from 'zod';
 
-const ContactSchema = z.object({
+export const ContactSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
   email: z.email('Email is required'),
   message: z.string().min(10, 'Message too short').max(2000),
@@ -28,7 +28,7 @@ const InputField = ({ id, type, value, header, input, errors, ...props }: InputF
   const errorList = errors?.errors;
   return (
     <div className={styles.field}>
-      <Text variant="xs" font="mono" styles={styles.label}>
+      <Text as="label" htmlFor={id} variant="xs" font="mono" styles={styles.label}>
         {header}
       </Text>
       {input ? (
@@ -61,7 +61,7 @@ const ContactForm = () => {
       setErrors({ name: tree.properties?.name, email: tree.properties?.email, message: tree.properties?.message });
       return;
     }
-    // in next PR, send it via POST
+
     setErrors({});
     setName('');
     setEmail('');
