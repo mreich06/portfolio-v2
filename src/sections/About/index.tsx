@@ -79,7 +79,7 @@ const About = () => {
         </div>
         <StaggerContainer className={styles.badgeContainer} staggerChildren={0.08}>
           {Object.entries(BadgeLogos).map(([name, src]) => (
-            <StaggerItem key={name} hover>
+            <StaggerItem key={name}>
               <HobbyBadge icon={src} label={name} />
             </StaggerItem>
           ))}

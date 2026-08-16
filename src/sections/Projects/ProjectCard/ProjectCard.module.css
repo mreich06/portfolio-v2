@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
-  background: var(--card-bg);
+  background: linear-gradient(to bottom, var(--card-bg), var(--card-bg));
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
@@ -15,7 +15,7 @@
 }
 
 .card:hover {
-  background: var(--card-bg-hover);
+  background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
   border-color: rgba(79, 209, 197, 0.35);
 }
 

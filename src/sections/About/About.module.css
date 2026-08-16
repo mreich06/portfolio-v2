@@ -14,7 +14,7 @@
 .terminalContainer {
   display: flex;
   flex-direction: column;
-  background-color: var(--card-bg);
+  background: linear-gradient(to bottom, var(--card-bg), var(--card-bg));
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.2rem 1.75rem;
@@ -24,16 +24,38 @@
   line-height: 1.9;
   align-items: flex-start;
   text-align: left;
+  box-sizing: border-box;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.terminalContainer:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-light);
+  background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
 }
 
 .bottomSection {
   display: flex;
   flex-direction: column;
   margin-top: 2.5rem;
+  background: linear-gradient(to bottom, var(--card-bg), var(--card-bg));
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1.75rem;
   text-align: left;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.bottomSection:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-light);
+  background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
 }
 
 .sectionContainer {
@@ -42,11 +64,21 @@
   align-content: flex-start;
   justify-content: flex-start;
   text-align: left;
-  background-color: var(--card-bg);
+  background: linear-gradient(to bottom, var(--card-bg), var(--card-bg));
   border: 1px solid var(--border);
   border-radius: 7px;
   padding: 1.25rem;
   gap: 1rem;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.sectionContainer:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-light);
+  background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
 }
 
 .sectionContainer h3,

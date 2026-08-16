@@ -166,12 +166,12 @@ button {
 .card-aura::before {
   content: '';
   position: absolute;
-  left: 12%;
-  right: 12%;
-  bottom: -0.75rem;
-  height: 2.75rem;
+  left: 18%;
+  right: 18%;
+  bottom: -0.5rem;
+  height: 2.5rem;
   background: var(--primary);
-  filter: blur(32px);
+  filter: blur(56px);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -180,7 +180,7 @@ button {
 }
 
 .card-aura:hover::before {
-  opacity: 0.28;
+  opacity: 0.15;
 }
 
 .content-container {
