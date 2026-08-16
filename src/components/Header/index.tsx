@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 import NavModal from '../NavModal';
 import { NAV_ITEMS } from '../../constants';
 import { Menu } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,7 +77,7 @@ const Header = () => {
         <Menu className={styles.menuIcon} size={30} />
       </button>
 
-      {isModalOpen && <NavModal setIsModalOpen={setIsModalOpen} />}
+      <AnimatePresence>{isModalOpen && <NavModal setIsModalOpen={setIsModalOpen} />}</AnimatePresence>
     </header>
   );
 };

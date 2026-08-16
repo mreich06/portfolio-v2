@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { act, render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import Hero from './';
 
 // Type definition for mocked button props
@@ -20,13 +20,28 @@ vi.mock('../../assets/profile-photo.webp', () => ({
 }));
 
 describe('Hero Component', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it('renders the correct introduction texts', () => {
     render(<Hero />);
 
     expect(screen.getByText("Hello, I'm")).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /maya reich/i })).toBeInTheDocument();
-    expect(screen.getByText('Snowboarding enthusiast on a code journey')).toBeInTheDocument();
     expect(screen.getByText(/full-stack software engineer/i)).toBeInTheDocument();
+
+    // Tagline types out over time rather than rendering statically. Each character's
+    // setTimeout is only scheduled once React flushes the previous one's effect, so
+    // timers must be advanced in small steps (not one big jump) for the typing to progress.
+    for (let i = 0; i < 55; i++) {
+      act(() => vi.advanceTimersByTime(60));
+    }
+    expect(screen.getByText('Snowboarding enthusiast on a code journey')).toBeInTheDocument();
   });
 
   it('renders both action buttons', () => {
