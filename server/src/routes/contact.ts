@@ -1,9 +1,9 @@
-import { Router } from 'express';
+import { Router, Response } from 'express';
 import { z } from 'zod';
-import { Resend } from 'resend';
+import { CreateEmailResponseSuccess, Resend } from 'resend';
 const router = Router();
 
-type FormDataType = { name: string; email: string; message: string };
+type ContactResponse = { success: true; data: CreateEmailResponseSuccess } | { success: false; error: string };
 
 const ContactSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
@@ -11,9 +11,11 @@ const ContactSchema = z.object({
   message: z.string().min(10, 'Message too short').max(2000),
 });
 
+type ContactInput = z.infer<typeof ContactSchema>;
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const sendEmail = async (formData: FormDataType) => {
+const sendEmail = async (formData: ContactInput) => {
   const { name, email, message } = formData;
   const { data, error } = await resend.emails.send({
     from: 'Acme <onboarding@resend.dev>',
@@ -29,7 +31,7 @@ const sendEmail = async (formData: FormDataType) => {
   return data;
 };
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res: Response<ContactResponse>) => {
   const result = ContactSchema.safeParse(req.body);
 
   // validate on server for requests bypassed on client
