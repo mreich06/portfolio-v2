@@ -3,6 +3,8 @@ import styles from './About.module.css';
 import * as BadgeLogos from '../../assets/BadgeLogos';
 import HobbyBadge from '../../components/HobbyBadge';
 import Text from '../../components/Text';
+import FadeUp from '../../components/motion/FadeUp';
+import { StaggerContainer, StaggerItem } from '../../components/motion/Stagger';
 const About = () => {
   return (
     <div>
@@ -14,7 +16,7 @@ const About = () => {
       />
 
       <div className={styles.container}>
-        <div className={styles.leftCol}>
+        <FadeUp className={styles.leftCol}>
           <div>
             <div className={styles.sectionContainer}>
               <Text variant="h3" font="sans" color="white">
@@ -33,9 +35,9 @@ const About = () => {
               </Text>
             </div>
           </div>
-        </div>
+        </FadeUp>
 
-        <div className={styles.terminalContainer}>
+        <FadeUp className={styles.terminalContainer} delay={0.15}>
           <div className={styles.terminalHeader}>
             <div className={styles.terminalDots}>
               {['#ff5f56', '#ffbd2e', '#27c93f'].map((color, index) => (
@@ -63,7 +65,7 @@ const About = () => {
             <div>$ status: Available for opportunities</div>
             <div>$ response_time: Usually within 24 hours</div>
           </div>
-        </div>
+        </FadeUp>
       </div>
 
       {/* Bottom Beyond the job section */}
@@ -73,11 +75,13 @@ const About = () => {
           <h3>Beyond the job</h3>
           <h5>INTERESTS AND VALUES</h5>
         </div>
-        <div className={styles.badgeContainer}>
+        <StaggerContainer className={styles.badgeContainer} staggerChildren={0.08}>
           {Object.entries(BadgeLogos).map(([name, src]) => (
-            <HobbyBadge key={name} icon={src} label={name} />
+            <StaggerItem key={name} hover>
+              <HobbyBadge icon={src} label={name} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </div>
   );

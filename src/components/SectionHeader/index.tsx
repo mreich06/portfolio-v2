@@ -1,5 +1,6 @@
 import styles from './SectionHeader.module.css';
 import Text from '../Text';
+import FadeUp from '../motion/FadeUp';
 
 interface SectionHeaderProps {
   sectionNumber: string;
@@ -10,7 +11,7 @@ interface SectionHeaderProps {
 }
 const SectionHeader = ({ sectionNumber, title, sectionDescription, descriptionSecondLine, secondLineHighlight }: SectionHeaderProps) => {
   return (
-    <div className={styles.container}>
+    <FadeUp className={styles.container}>
       <div className={styles.divider} />
       <div className={styles.titleSection}>
         <div className={styles.left}>
@@ -30,7 +31,7 @@ const SectionHeader = ({ sectionNumber, title, sectionDescription, descriptionSe
           </Text>
         </div>
       </div>
-    </div>
+    </FadeUp>
   );
 };
 
