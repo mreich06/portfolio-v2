@@ -12,6 +12,4 @@ app.use('/health', healthRouter);
 
 app.use('/contact', contactRouter);
 
-app.listen(3002, () => {
-  console.log('Server running on http://localhost:3002');
-});
+export default app;
