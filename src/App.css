@@ -157,6 +157,32 @@ button {
   color: var(--orange);
 }
 
+/* Soft blurred glow anchored beneath card-like surfaces */
+.card-aura {
+  position: relative;
+  z-index: 0;
+}
+
+.card-aura::before {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -0.75rem;
+  height: 2.75rem;
+  background: var(--primary);
+  filter: blur(32px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.card-aura:hover::before {
+  opacity: 0.28;
+}
+
 .content-container {
   max-width: 1200px;
   margin: 0 auto;

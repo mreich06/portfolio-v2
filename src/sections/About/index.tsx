@@ -17,7 +17,7 @@ const About = () => {
 
       <div className={styles.container}>
         <FadeUp className={styles.leftCol}>
-          <div>
+          <div className="card-aura">
             <div className={styles.sectionContainer}>
               <Text variant="h3" font="sans" color="white">
                 Who I am
@@ -37,33 +37,35 @@ const About = () => {
           </div>
         </FadeUp>
 
-        <FadeUp className={styles.terminalContainer} delay={0.15}>
-          <div className={styles.terminalHeader}>
-            <div className={styles.terminalDots}>
-              {['#ff5f56', '#ffbd2e', '#27c93f'].map((color, index) => (
-                <span key={index} style={{ color }}>
-                  ●
-                </span>
-              ))}
+        <FadeUp className="card-aura" delay={0.15} style={{ height: '100%' }}>
+          <div className={styles.terminalContainer}>
+            <div className={styles.terminalHeader}>
+              <div className={styles.terminalDots}>
+                {['#ff5f56', '#ffbd2e', '#27c93f'].map((color, index) => (
+                  <span key={index} style={{ color }}>
+                    ●
+                  </span>
+                ))}
+              </div>
+              <div className={styles.terminalHeaderText}>my_info.sh</div>
             </div>
-            <div className={styles.terminalHeaderText}>my_info.sh</div>
-          </div>
 
-          {[
-            { command: '$ whoami', output: 'maya' },
-            { command: '$ pwd', output: '/Users/maya/career/lmi' },
-            { command: '$ echo $CURRENT_FOCUS', output: 'Full Stack Web Development' },
-            { command: '$ echo $BASED_IN', output: 'Amsterdam, Netherlands' },
-            { command: '$ echo $INTERESTS', output: 'Web Development · UX · Creative Technology' },
-          ].map(({ command, output }) => (
-            <div key={command} className={styles.terminalLine}>
-              <div className={styles.terminalInput}>{command}</div>
-              <div className={styles.terminalOutput}>{output}</div>
+            {[
+              { command: '$ whoami', output: 'maya' },
+              { command: '$ pwd', output: '/Users/maya/career/lmi' },
+              { command: '$ echo $CURRENT_FOCUS', output: 'Full Stack Web Development' },
+              { command: '$ echo $BASED_IN', output: 'Amsterdam, Netherlands' },
+              { command: '$ echo $INTERESTS', output: 'Web Development · UX · Creative Technology' },
+            ].map(({ command, output }) => (
+              <div key={command} className={styles.terminalLine}>
+                <div className={styles.terminalInput}>{command}</div>
+                <div className={styles.terminalOutput}>{output}</div>
+              </div>
+            ))}
+            <div className={styles.terminalFooter}>
+              <div>$ status: Available for opportunities</div>
+              <div>$ response_time: Usually within 24 hours</div>
             </div>
-          ))}
-          <div className={styles.terminalFooter}>
-            <div>$ status: Available for opportunities</div>
-            <div>$ response_time: Usually within 24 hours</div>
           </div>
         </FadeUp>
       </div>

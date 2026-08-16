@@ -1,6 +1,8 @@
 .card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -14,7 +16,7 @@
 
 .card:hover {
   background: var(--card-bg-hover);
-  border-color: var(--primary);
+  border-color: rgba(79, 209, 197, 0.35);
 }
 
 .imageWrapper {
