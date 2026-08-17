@@ -1,6 +1,7 @@
 import { Router, Response } from 'express';
 import { z } from 'zod';
 import { CreateEmailResponseSuccess, Resend } from 'resend';
+import rateLimit from '../middleware/rateLimit';
 const router = Router();
 
 type ContactResponse = { success: true; data: CreateEmailResponseSuccess } | { success: false; error: string };
@@ -30,6 +31,8 @@ const sendEmail = async (formData: ContactInput) => {
 
   return data;
 };
+
+router.use(rateLimit);
 
 router.post('/', async (req, res: Response<ContactResponse>) => {
   const result = ContactSchema.safeParse(req.body);
