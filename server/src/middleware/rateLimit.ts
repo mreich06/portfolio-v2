@@ -17,6 +17,7 @@ const rateLimit = (req: Request, res: Response, next: NextFunction) => {
   }
 
   if (entry.count >= MAX_REQUESTS) {
+    res.setHeader('Retry-After', Math.ceil(entry.resetAt - now) / 1000);
     return res.status(429).json({ success: false, error: 'Too many requests, try again later.' });
   }
 
