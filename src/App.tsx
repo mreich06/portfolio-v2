@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect } from 'react';
 import { MotionConfig } from 'framer-motion';
+import CustomCursor from './components/motion/CustomCursor';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import About from './sections/About';
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <MotionConfig reducedMotion="user">
+      <CustomCursor />
       <div>
         <Header />
         <main className="content-container">

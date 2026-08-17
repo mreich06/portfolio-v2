@@ -47,7 +47,7 @@ describe('Hero Component', () => {
   it('renders both action buttons', () => {
     render(<Hero />);
 
-    expect(screen.getByRole('button', { name: /view my work/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /download resume/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /get in touch/i })).toBeInTheDocument();
   });
 

@@ -25,12 +25,12 @@ const Hero = () => {
           </Text>
         </StaggerItem>
         <StaggerItem>
-          <Text variant="h3" font="sans" color="muted">
+          <Text variant="subtitle" font="sans" color="muted">
             <TypewriterText phrases={TAGLINES} />
           </Text>
         </StaggerItem>
         <StaggerItem>
-          <Text variant="body" font="sans" color="white-70">
+          <Text variant="bodySmall" font="sans" color="white-70">
             I’m a full-stack software engineer who builds production-ready web and mobile applications from frontend to backend. With experience in
             React, TypeScript, Node.js, and cloud infrastructure, I care about creating software that is fast, scalable, and genuinely useful, from
             enterprise applications serving millions of users to products built from the ground up.
@@ -39,7 +39,7 @@ const Hero = () => {
 
         <StaggerItem className={styles.buttonContainer}>
           <Button variant="solid-primary" bold upperCase>
-            View my work
+            Download Resume
           </Button>
           <Button variant="outline-secondary" bold upperCase>
             Get in touch
