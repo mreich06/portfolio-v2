@@ -3,6 +3,8 @@ import styles from './About.module.css';
 import * as BadgeLogos from '../../assets/BadgeLogos';
 import HobbyBadge from '../../components/HobbyBadge';
 import Text from '../../components/Text';
+import FadeUp from '../../components/motion/FadeUp';
+import { StaggerContainer, StaggerItem } from '../../components/motion/Stagger';
 const About = () => {
   return (
     <div>
@@ -14,8 +16,8 @@ const About = () => {
       />
 
       <div className={styles.container}>
-        <div className={styles.leftCol}>
-          <div>
+        <FadeUp className={styles.leftCol}>
+          <div className="card-aura">
             <div className={styles.sectionContainer}>
               <Text variant="h3" font="sans" color="white">
                 Who I am
@@ -33,37 +35,39 @@ const About = () => {
               </Text>
             </div>
           </div>
-        </div>
+        </FadeUp>
 
-        <div className={styles.terminalContainer}>
-          <div className={styles.terminalHeader}>
-            <div className={styles.terminalDots}>
-              {['#ff5f56', '#ffbd2e', '#27c93f'].map((color, index) => (
-                <span key={index} style={{ color }}>
-                  ●
-                </span>
-              ))}
+        <FadeUp className="card-aura" delay={0.15} style={{ height: '100%' }}>
+          <div className={styles.terminalContainer}>
+            <div className={styles.terminalHeader}>
+              <div className={styles.terminalDots}>
+                {['#ff5f56', '#ffbd2e', '#27c93f'].map((color, index) => (
+                  <span key={index} style={{ color }}>
+                    ●
+                  </span>
+                ))}
+              </div>
+              <div className={styles.terminalHeaderText}>my_info.sh</div>
             </div>
-            <div className={styles.terminalHeaderText}>my_info.sh</div>
-          </div>
 
-          {[
-            { command: '$ whoami', output: 'maya' },
-            { command: '$ pwd', output: '/Users/maya/career/lmi' },
-            { command: '$ echo $CURRENT_FOCUS', output: 'Full Stack Web Development' },
-            { command: '$ echo $BASED_IN', output: 'Amsterdam, Netherlands' },
-            { command: '$ echo $INTERESTS', output: 'Web Development · UX · Creative Technology' },
-          ].map(({ command, output }) => (
-            <div key={command} className={styles.terminalLine}>
-              <div className={styles.terminalInput}>{command}</div>
-              <div className={styles.terminalOutput}>{output}</div>
+            {[
+              { command: '$ whoami', output: 'maya' },
+              { command: '$ pwd', output: '/Users/maya/career/lmi' },
+              { command: '$ echo $CURRENT_FOCUS', output: 'Full Stack Web Development' },
+              { command: '$ echo $BASED_IN', output: 'Amsterdam, Netherlands' },
+              { command: '$ echo $INTERESTS', output: 'Web Development · UX · Creative Technology' },
+            ].map(({ command, output }) => (
+              <div key={command} className={styles.terminalLine}>
+                <div className={styles.terminalInput}>{command}</div>
+                <div className={styles.terminalOutput}>{output}</div>
+              </div>
+            ))}
+            <div className={styles.terminalFooter}>
+              <div>$ status: Available for opportunities</div>
+              <div>$ response_time: Usually within 24 hours</div>
             </div>
-          ))}
-          <div className={styles.terminalFooter}>
-            <div>$ status: Available for opportunities</div>
-            <div>$ response_time: Usually within 24 hours</div>
           </div>
-        </div>
+        </FadeUp>
       </div>
 
       {/* Bottom Beyond the job section */}
@@ -73,11 +77,13 @@ const About = () => {
           <h3>Beyond the job</h3>
           <h5>INTERESTS AND VALUES</h5>
         </div>
-        <div className={styles.badgeContainer}>
+        <StaggerContainer className={styles.badgeContainer} staggerChildren={0.08}>
           {Object.entries(BadgeLogos).map(([name, src]) => (
-            <HobbyBadge key={name} icon={src} label={name} />
+            <StaggerItem key={name}>
+              <HobbyBadge icon={src} label={name} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </div>
   );

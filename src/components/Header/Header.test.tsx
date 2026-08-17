@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import Header from './index';
@@ -22,7 +22,7 @@ describe('Header Component', () => {
     expect(screen.getByText('Projects')).toBeInTheDocument();
   });
 
-  it('toggles the mobile modal open and closed via user interactions', () => {
+  it('toggles the mobile modal open and closed via user interactions', async () => {
     render(<Header />);
 
     // Initial State
@@ -41,7 +41,8 @@ describe('Header Component', () => {
     // Modal Closed state
     const closeIconButton = modalContainer.querySelector('button') as HTMLButtonElement;
     fireEvent.click(closeIconButton);
-    expect(screen.queryByRole('button', { name: 'Contact' })).not.toBeInTheDocument();
+    // NavModal exits with a framer-motion animation, so it clears the DOM asynchronously
+    await waitFor(() => expect(screen.queryByRole('button', { name: 'Contact' })).not.toBeInTheDocument());
   });
 
   it('updates the active class visual styles when a desktop nav item is clicked', () => {

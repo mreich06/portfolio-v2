@@ -69,8 +69,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={styles.formContainer}>
-      <form className={styles.form} onSubmit={handleSubmit} noValidate>
+    <div className="card-aura">
+      <form className={`${styles.formContainer} ${styles.form}`} onSubmit={handleSubmit} noValidate>
         <InputField
           id={'name'}
           type={'text'}

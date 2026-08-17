@@ -1,7 +1,9 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: var(--card-bg);
+  height: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, var(--card-bg), var(--card-bg));
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
@@ -13,8 +15,8 @@
 }
 
 .card:hover {
-  background: var(--card-bg-hover);
-  border-color: var(--primary);
+  background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
+  border-color: rgba(79, 209, 197, 0.35);
 }
 
 .imageWrapper {

@@ -2,6 +2,7 @@ import SectionHeader from '../../components/SectionHeader';
 import { WorkHistory, type Tag } from '../../constants';
 import Text from '../../components/Text';
 import styles from './Experience.module.css';
+import { StaggerContainer, StaggerItem } from '../../components/motion/Stagger';
 export interface ExperienceSectionProps {
   dates: string;
   company: string;
@@ -53,11 +54,13 @@ const Experience = () => {
         sectionDescription={'~/experience'}
         descriptionSecondLine={'web development roles'}
       />
-      <div className={styles.experienceContainer}>
+      <StaggerContainer className={styles.experienceContainer}>
         {WorkHistory.map((item) => (
-          <ExperienceSection key={item.company} {...item} />
+          <StaggerItem key={item.company}>
+            <ExperienceSection {...item} />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </div>
   );
 };

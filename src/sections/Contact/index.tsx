@@ -5,6 +5,7 @@ import Text from '../../components/Text';
 import styles from './Contact.module.css';
 import ContactForm from './ContactForm';
 import { PopupModal } from 'react-calendly';
+import FadeUp from '../../components/motion/FadeUp';
 
 type ContactInfoType = { key: string; value: string; link?: string };
 const contactInfo: ContactInfoType[] = [
@@ -28,7 +29,7 @@ const Contact = () => {
         secondLineHighlight
       />
       <div className={styles.columns}>
-        <div className={styles.container}>
+        <FadeUp className={styles.container}>
           <Text variant="body" font="mono" styles={'color: var(--primary)'}>
             mayareich0606@gmail.com
           </Text>
@@ -52,8 +53,10 @@ const Contact = () => {
             </div>
             <Button onClick={() => setIsOpen(true)}>book a 30 min video call</Button>
           </div>
-        </div>
-        <ContactForm />
+        </FadeUp>
+        <FadeUp delay={0.15} style={{ flex: 1 }}>
+          <ContactForm />
+        </FadeUp>
         <PopupModal
           url={calendlyUrl}
           onModalClose={() => setIsOpen(false)}
