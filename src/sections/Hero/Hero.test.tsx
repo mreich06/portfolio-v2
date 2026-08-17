@@ -35,9 +35,6 @@ describe('Hero Component', () => {
     expect(screen.getByRole('heading', { name: /maya reich/i })).toBeInTheDocument();
     expect(screen.getByText(/full-stack software engineer/i)).toBeInTheDocument();
 
-    // Tagline types out over time rather than rendering statically. Each character's
-    // setTimeout is only scheduled once React flushes the previous one's effect, so
-    // timers must be advanced in small steps (not one big jump) for the typing to progress.
     for (let i = 0; i < 55; i++) {
       act(() => vi.advanceTimersByTime(60));
     }
