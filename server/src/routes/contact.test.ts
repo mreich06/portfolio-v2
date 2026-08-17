@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import request from 'supertest';
 import app from '../index';
+import { requestCounts } from '../middleware/rateLimit';
 
 // mock Resend
 const sendMock = vi.hoisted(() => vi.fn());
@@ -14,6 +15,7 @@ describe('POST /contact', () => {
   // Need to reset mock call history before each test
   beforeEach(() => {
     sendMock.mockClear();
+    requestCounts.clear();
   });
 
   it('returns 200 for valid input', async () => {
@@ -43,5 +45,15 @@ describe('POST /contact', () => {
 
     expect(res.status).toBe(500);
     expect(res.body.success).toBe(false);
+  });
+
+  it('returns 429 when the form has been sent 5 or more times', async () => {
+    const responses = [];
+    for (let i = 0; i <= 6; i++) {
+      responses.push(await request(app).post('/contact').send({ name: 'Maya', email: 'test@example.com', message: 'This is a message' }));
+    }
+
+    expect(responses[5].status).toBe(429);
+    expect(responses[5].body.success).toBe(false);
   });
 });
