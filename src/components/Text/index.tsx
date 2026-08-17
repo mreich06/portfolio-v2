@@ -5,7 +5,7 @@ type TextVariant = 'eyebrow' | 'h1' | 'h2' | 'subtitle' | 'h3' | 'body' | 'bodyS
 
 type FontVariant = 'sans' | 'mono';
 
-type ColorVariant = 'default' | 'cyan' | 'muted' | 'white' | 'white-70' | 'white-50' | 'blue' | 'orange';
+type ColorVariant = 'default' | 'cyan' | 'muted' | 'white' | 'white-70' | 'white-50' | 'blue' | 'orange' | 'success' | 'error';
 interface TextProps {
   variant: TextVariant;
   font: FontVariant;
@@ -45,6 +45,8 @@ const colorClasses: Record<ColorVariant, string> = {
   'white-50': 'color-white-50',
   blue: 'color-blue',
   orange: 'color-orange',
+  success: 'color-success',
+  error: 'color-error',
 };
 
 const defaultElements: Record<TextVariant, ElementType> = {

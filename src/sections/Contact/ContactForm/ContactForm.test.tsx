@@ -1,7 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, beforeEach } from 'vitest';
 import '@testing-library/jest-dom';
-import ContactForm, { ContactSchema } from './index';
+import ContactForm from './index';
+import { ContactSchema } from './schema';
 
 describe('ContactSchema email validation', () => {
   beforeEach(() => {
