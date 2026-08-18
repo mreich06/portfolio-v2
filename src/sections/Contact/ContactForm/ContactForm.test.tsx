@@ -1,8 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import ContactForm from './index';
 import { ContactSchema } from './schema';
+
+const fetchSpy = vi.spyOn(globalThis, 'fetch');
 
 describe('ContactSchema email validation', () => {
   beforeEach(() => {
@@ -78,5 +80,42 @@ describe('ContactForm message validation', () => {
     fireEvent.click(screen.getByText('Send message'));
 
     expect(screen.queryByText('Message too short')).not.toBeInTheDocument();
+  });
+});
+
+describe('ContactForm POST request validation', () => {
+  beforeEach(() => {
+    render(<ContactForm />);
+  });
+  it('receives a success response when the request is successful', async () => {
+    fireEvent.change(screen.getByLabelText('Name:'), { target: { value: 'Maya' } });
+    fireEvent.change(screen.getByLabelText('Email:'), { target: { value: 'examples@email.com' } });
+    fireEvent.change(screen.getByLabelText('Message:'), { target: { value: 'This is a message' } });
+    // mock the resolved value first since the click event immediately calls fetch
+    // and returns what is configured by mock in that moment
+    fetchSpy.mockResolvedValue({ ok: true } as Response);
+    fireEvent.click(screen.getByText('Send message'));
+
+    expect(await screen.findByText('Message sent!')).toBeInTheDocument();
+  });
+
+  it('throws an error when the request fails', async () => {
+    fireEvent.change(screen.getByLabelText('Name:'), { target: { value: 'Maya' } });
+    fireEvent.change(screen.getByLabelText('Email:'), { target: { value: 'example@email.com' } });
+    fireEvent.change(screen.getByLabelText('Message:'), { target: { value: 'This is a message' } });
+    fetchSpy.mockResolvedValue({ ok: false } as Response);
+    fireEvent.click(screen.getByText('Send message'));
+
+    expect(await screen.findByText('Something went wrong, try again')).toBeInTheDocument();
+  });
+
+  it('Shows error message when the request sends an error response', async () => {
+    fireEvent.change(screen.getByLabelText('Name:'), { target: { value: 'Maya' } });
+    fireEvent.change(screen.getByLabelText('Email:'), { target: { value: 'example@email.com' } });
+    fireEvent.change(screen.getByLabelText('Message:'), { target: { value: 'This is a message' } });
+    fetchSpy.mockRejectedValueOnce({ error: 'error' });
+    fireEvent.click(screen.getByText('Send message'));
+
+    expect(await screen.findByText('Something went wrong, try again')).toBeInTheDocument();
   });
 });
