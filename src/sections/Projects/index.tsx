@@ -14,9 +14,9 @@ const Projects = () => {
         descriptionSecondLine={'3 of 5 visible'}
       />
       <StaggerContainer className={styles.projectsGrid}>
-        {ProjectCards.map(({ title, description, image, imageAltText, tags }) => (
+        {ProjectCards.map(({ title, description, image, imageAltText, tags, githubUrl, liveUrl }) => (
           <StaggerItem key={title} hover className="card-aura">
-            <ProjectCard {...{ title, description, image, imageAltText, tags }} />
+            <ProjectCard {...{ title, description, image, imageAltText, tags, githubUrl, liveUrl }} />
           </StaggerItem>
         ))}
       </StaggerContainer>

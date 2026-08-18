@@ -22,27 +22,16 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
         <Text variant="h3" font="sans" styles={styles.title}>
           {title}
         </Text>
-
-        <div className={styles.links}>
-          {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
-              &#xe900; {/* or use an SVG/icon component */}
-            </a>
-          )}
-          {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
-              ↗
-            </a>
-          )}
-        </div>
       </div>
       <Text variant="xs" font="sans" color="white-70" styles={styles.description}>
         {description}
       </Text>
       <TagSection tags={tags} />
       <div className={styles.buttons}>
-        <Button variant="solid-primary">GitHub</Button>
-        <Button>See Live </Button>
+        <Button variant="solid-primary" onClick={() => window.open(githubUrl, '_blank', 'noopener,noreferrer')}>
+          GitHub
+        </Button>
+        <Button onClick={() => window.open(liveUrl, '_blank', 'noopener,noreferrer')}>See Live</Button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { MotionConfig } from 'framer-motion';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
 import CustomCursor from './components/motion/CustomCursor';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -32,7 +32,7 @@ const App = () => {
           <Projects />
           <Contact />
           <Footer />
-          {isModalOpen && <ContactModal setIsModalOpen={setIsModalOpen} />}
+          <AnimatePresence>{isModalOpen && <ContactModal setIsModalOpen={setIsModalOpen} />}</AnimatePresence>
         </main>
       </div>
     </MotionConfig>

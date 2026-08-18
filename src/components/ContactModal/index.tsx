@@ -2,6 +2,8 @@ import styles from './ContactModal.module.css';
 import ContactForm from '../../sections/Contact/ContactForm';
 import Text from '../../components/Text';
 import { X } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { easeOut, fadeInVariants, fadeUpVariants } from '../motion/variants';
 interface ContactModalProps {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -13,8 +15,16 @@ const ContactModal = ({ setIsModalOpen }: ContactModalProps) => {
   };
 
   return (
-    <div className={styles.container} onClick={(e) => handleClickOutsideModal(e)}>
-      <div className={styles.background}>
+    <motion.div
+      className={styles.container}
+      onClick={(e) => handleClickOutsideModal(e)}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={fadeInVariants}
+      transition={{ duration: 0.3, ease: easeOut }}
+    >
+      <motion.div className={styles.background} variants={fadeUpVariants} transition={{ duration: 0.5, ease: easeOut }}>
         <button className={styles.closeButton} onClick={() => setIsModalOpen(false)}>
           <X />
         </button>
@@ -27,8 +37,8 @@ const ContactModal = ({ setIsModalOpen }: ContactModalProps) => {
         <div className={styles.contactModal}>
           <ContactForm />
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
