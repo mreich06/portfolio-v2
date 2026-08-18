@@ -6,7 +6,7 @@ import { StaggerContainer, StaggerItem } from '../../components/motion/Stagger';
 
 const Projects = () => {
   return (
-    <>
+    <div id="projects">
       <SectionHeader
         sectionNumber={'03. Projects '}
         title={'Featured Work'}
@@ -25,7 +25,7 @@ const Projects = () => {
           View all projects on GitHub
         </a>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -6,6 +6,7 @@ import NavModal from '../NavModal';
 import { NAV_ITEMS } from '../../constants';
 import { Menu } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
+import { scrollToSection } from '../../utils/scrollToSection';
 
 interface HeaderProps {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -46,8 +47,9 @@ const Header = ({ setIsModalOpen }: HeaderProps) => {
     }
   }, [activeIndex]);
 
-  const handleItemClick = (e: React.MouseEvent, index: number) => {
+  const handleItemClick = (e: React.MouseEvent, index: number, href: string) => {
     e.preventDefault();
+    scrollToSection(href);
     setActiveIndex(index);
   };
 
@@ -62,7 +64,7 @@ const Header = ({ setIsModalOpen }: HeaderProps) => {
             <li key={index} className={`${styles.navItemWrapper} ${index === activeIndex ? styles.activeItemWrapper : ''}`}>
               <a
                 className={`${styles.navItem} ${index === activeIndex ? styles.active : ''}`}
-                onClick={(e) => handleItemClick(e, index)}
+                onClick={(e) => handleItemClick(e, index, item.href)}
                 href={item.href}
               >
                 {item.label}

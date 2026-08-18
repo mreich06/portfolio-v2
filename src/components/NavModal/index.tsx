@@ -2,6 +2,7 @@ import styles from './NavModal.module.css';
 import { NAV_ITEMS } from '../../constants';
 import { X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { scrollToSection } from '../../utils/scrollToSection';
 
 interface NavModalProps {
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -9,6 +10,12 @@ interface NavModalProps {
 }
 
 const NavModal = ({ setIsMenuOpen, setIsModalOpen }: NavModalProps) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    scrollToSection(href);
+  };
+
   return (
     <motion.div
       className={styles.modal}
@@ -22,9 +29,9 @@ const NavModal = ({ setIsMenuOpen, setIsModalOpen }: NavModalProps) => {
       </button>
 
       {NAV_ITEMS.map((item) => (
-        <button key={item.label} className={styles.modalItem}>
+        <a href={item.href} key={item.label} className={styles.modalItem} onClick={(e) => handleScroll(e, item.href)}>
           {item.label}
-        </button>
+        </a>
       ))}
       <button
         className={styles.contactButton}
