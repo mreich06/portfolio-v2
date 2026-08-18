@@ -3,16 +3,10 @@ import styles from './ContactForm.module.css';
 import Text from './../../../components/Text';
 import Button from '../../../components/Button';
 import { z } from 'zod';
-
-export const ContactSchema = z.object({
-  name: z.string().min(1, 'Name is required').max(100),
-  email: z.email('Email is required'),
-  message: z.string().min(10, 'Message too short').max(2000),
-});
+import { ContactSchema, type ContactInput } from './schema';
 
 // valid field won't appear in properties, so make them optional
 type FormErrors = Partial<Record<keyof ContactInput, { errors: string[] }>>;
-type ContactInput = z.infer<typeof ContactSchema>;
 
 interface InputFieldProps {
   id: string;
@@ -45,13 +39,17 @@ const InputField = ({ id, type, value, header, input, errors, ...props }: InputF
     </div>
   );
 };
+
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [success, setSuccess] = useState<null | boolean>(null);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [loading, setLoading] = useState(false);
+  const [responseError, setResponseError] = useState<null | boolean>(null);
 
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = { name, email, message };
     const result = ContactSchema.safeParse(formData);
@@ -62,10 +60,28 @@ const ContactForm = () => {
       return;
     }
 
-    setErrors({});
-    setName('');
-    setEmail('');
-    setMessage('');
+    try {
+      setLoading(true);
+      const response = await fetch('http://localhost:3002/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(result.data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      setErrors({});
+      setName('');
+      setEmail('');
+      setMessage('');
+      setSuccess(true);
+    } catch {
+      setResponseError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -97,7 +113,25 @@ const ContactForm = () => {
           onChange={(e) => setMessage(e.target.value)}
           errors={errors?.message}
         />
-        <Button className={styles.button}>Send message</Button>
+        <div aria-live="polite" className={styles.buttonContainer}>
+          {loading && (
+            <Text variant="xs" font="sans" color="white-70">
+              Loading...
+            </Text>
+          )}
+          {success && (
+            <Text variant="xs" font="sans" color="success">
+              Message sent!
+            </Text>
+          )}
+          {responseError && (
+            <Text variant="xs" font="sans" color="error">
+              Something went wrong, try again
+            </Text>
+          )}
+
+          <Button className={styles.button}>Send message</Button>
+        </div>
       </form>
     </div>
   );

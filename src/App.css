@@ -9,6 +9,7 @@
   --primary-foreground: #071a22;
   --secondary: #f06595;
   --muted: #71798a;
+  --green: #65e94a;
   --accent: #c55757;
   --blue: #61afef;
   --orange: #e5a35a;
@@ -140,6 +141,12 @@ button {
 }
 .color-cyan {
   color: var(--card);
+}
+.color-success {
+  color: var(--green);
+}
+.color-error {
+  color: var(--secondary);
 }
 .color-white-70 {
   color: var(--text-white-70);
