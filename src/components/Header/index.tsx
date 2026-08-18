@@ -7,12 +7,14 @@ import { NAV_ITEMS } from '../../constants';
 import { Menu } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
-const Header = () => {
+interface HeaderProps {
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Header = ({ setIsModalOpen }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const underlineRef = useRef<HTMLDivElement>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  console.log(isModalOpen);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,14 +72,21 @@ const Header = () => {
           <div ref={underlineRef} className={styles.activeUnderline} />
         </ul>
       </nav>
-      <Button variant="outline-secondary" className={styles.contactButton}>
+      <Button
+        variant="outline-secondary"
+        className={styles.contactButton}
+        onClick={() => {
+          setIsModalOpen(true);
+          setIsMenuOpen(false);
+        }}
+      >
         Get in touch
       </Button>
-      <button aria-label="Toggle menu" className={styles.mobileMenuButton} onClick={() => setIsModalOpen(!isModalOpen)}>
+      <button aria-label="Toggle menu" className={styles.mobileMenuButton} onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <Menu className={styles.menuIcon} size={30} />
       </button>
 
-      <AnimatePresence>{isModalOpen && <NavModal setIsModalOpen={setIsModalOpen} />}</AnimatePresence>
+      <AnimatePresence>{isMenuOpen && <NavModal setIsModalOpen={setIsModalOpen} setIsMenuOpen={setIsMenuOpen} />}</AnimatePresence>
     </header>
   );
 };

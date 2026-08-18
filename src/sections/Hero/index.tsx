@@ -13,7 +13,11 @@ const TAGLINES = [
   'Curious builder, always learning something new',
 ];
 
-const Hero = () => {
+interface HeroProps {
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Hero = ({ setIsModalOpen }: HeroProps) => {
   const downloadResume = () => {
     const link = document.createElement('a');
     link.href = resumeUrl;
@@ -48,7 +52,7 @@ const Hero = () => {
           <Button variant="solid-primary" bold upperCase onClick={downloadResume}>
             Download Resume
           </Button>
-          <Button variant="outline-secondary" bold upperCase>
+          <Button variant="outline-secondary" bold upperCase onClick={() => setIsModalOpen(true)}>
             Get in touch
           </Button>
         </StaggerItem>

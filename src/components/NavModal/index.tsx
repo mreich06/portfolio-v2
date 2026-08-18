@@ -4,10 +4,11 @@ import { X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface NavModalProps {
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavModal = ({ setIsModalOpen }: NavModalProps) => {
+const NavModal = ({ setIsMenuOpen, setIsModalOpen }: NavModalProps) => {
   return (
     <motion.div
       className={styles.modal}
@@ -16,7 +17,7 @@ const NavModal = ({ setIsModalOpen }: NavModalProps) => {
       exit={{ opacity: 0, y: -16, scale: 0.98 }}
       transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
     >
-      <button className={styles.closeButton} onClick={() => setIsModalOpen(false)}>
+      <button className={styles.closeButton} onClick={() => setIsMenuOpen(false)}>
         <X size={20} />
       </button>
 
@@ -25,7 +26,15 @@ const NavModal = ({ setIsModalOpen }: NavModalProps) => {
           {item.label}
         </button>
       ))}
-      <button className={styles.contactButton}>Contact</button>
+      <button
+        className={styles.contactButton}
+        onClick={() => {
+          setIsMenuOpen(false);
+          setIsModalOpen(true);
+        }}
+      >
+        Contact
+      </button>
     </motion.div>
   );
 };
