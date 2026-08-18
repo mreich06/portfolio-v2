@@ -5,6 +5,7 @@ import Text from '../../components/Text';
 import TypewriterText from '../../components/motion/TypewriterText';
 import FadeUp from '../../components/motion/FadeUp';
 import { StaggerContainer, StaggerItem } from '../../components/motion/Stagger';
+import resumeUrl from '../../assets/maya-reich-resume.pdf';
 
 const TAGLINES = [
   'Snowboarding enthusiast on a code journey',
@@ -13,6 +14,12 @@ const TAGLINES = [
 ];
 
 const Hero = () => {
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Resume.pdf';
+    link.click();
+  };
   return (
     <div className={styles.hero}>
       <StaggerContainer className={styles.heroText} staggerChildren={0.15}>
@@ -38,7 +45,7 @@ const Hero = () => {
         </StaggerItem>
 
         <StaggerItem className={styles.buttonContainer}>
-          <Button variant="solid-primary" bold upperCase>
+          <Button variant="solid-primary" bold upperCase onClick={downloadResume}>
             Download Resume
           </Button>
           <Button variant="outline-secondary" bold upperCase>
