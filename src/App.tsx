@@ -1,6 +1,6 @@
 import './App.css';
-import { useEffect } from 'react';
-import { MotionConfig } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
 import CustomCursor from './components/motion/CustomCursor';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -9,8 +9,10 @@ import Contact from './sections/Contact';
 import Experience from './sections/Experience';
 import Hero from './sections/Hero';
 import Projects from './sections/Projects';
+import ContactModal from './components/ContactModal';
 
 const App = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
@@ -22,14 +24,15 @@ const App = () => {
     <MotionConfig reducedMotion="user">
       <CustomCursor />
       <div>
-        <Header />
+        <Header {...{ setIsModalOpen }} />
         <main className="content-container">
-          <Hero />
+          <Hero {...{ setIsModalOpen }} />
           <About />
           <Experience />
           <Projects />
           <Contact />
           <Footer />
+          <AnimatePresence>{isModalOpen && <ContactModal setIsModalOpen={setIsModalOpen} />}</AnimatePresence>
         </main>
       </div>
     </MotionConfig>

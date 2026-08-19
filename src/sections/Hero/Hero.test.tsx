@@ -7,6 +7,8 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
+const setIsModalOpen = vi.fn();
+
 // Mock the Button component to isolate Hero component testing
 vi.mock('../../components/Button', () => {
   return {
@@ -29,7 +31,7 @@ describe('Hero Component', () => {
   });
 
   it('renders the correct introduction texts', () => {
-    render(<Hero />);
+    render(<Hero {...{ setIsModalOpen }} />);
 
     expect(screen.getByText("Hello, I'm")).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /maya reich/i })).toBeInTheDocument();
@@ -42,14 +44,14 @@ describe('Hero Component', () => {
   });
 
   it('renders both action buttons', () => {
-    render(<Hero />);
+    render(<Hero {...{ setIsModalOpen }} />);
 
     expect(screen.getByRole('button', { name: /download resume/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /get in touch/i })).toBeInTheDocument();
   });
 
   it('renders the profile image with correct attributes', () => {
-    render(<Hero />);
+    render(<Hero {...{ setIsModalOpen }} />);
 
     const img = screen.getByRole('img', { name: /profile photo/i }) as HTMLImageElement;
     expect(img).toBeInTheDocument();

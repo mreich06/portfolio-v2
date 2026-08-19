@@ -7,7 +7,7 @@ import FadeUp from '../../components/motion/FadeUp';
 import { StaggerContainer, StaggerItem } from '../../components/motion/Stagger';
 const About = () => {
   return (
-    <div>
+    <div id="about">
       <SectionHeader
         sectionNumber={'01. About Me'}
         title={'My journey'}

@@ -13,7 +13,7 @@ export interface ExperienceSectionProps {
 }
 const ExperienceSection = ({ dates, company, location, jobTitle, descriptionList, stack }: ExperienceSectionProps) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="experience">
       <div className={styles.leftCol}>
         <Text variant="xs" font="mono" color="cyan">
           {dates}
