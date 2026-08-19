@@ -28,10 +28,10 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
       </Text>
       <TagSection tags={tags} />
       <div className={styles.buttons}>
-        <Button variant="solid-primary" onClick={() => window.open(githubUrl, '_blank', 'noopener,noreferrer')}>
+        <Button href={githubUrl} variant="solid-primary">
           GitHub
         </Button>
-        <Button onClick={() => window.open(liveUrl, '_blank', 'noopener,noreferrer')}>See Live</Button>
+        <Button href={liveUrl}>See Live</Button>
       </div>
     </div>
   );

@@ -8,22 +8,23 @@ vi.mock('../Button', () => ({
   default: ({ children, className }: { children: React.ReactNode; className?: string }) => <button className={className}>{children}</button>,
 }));
 
+const mockSetIsModalOpen = vi.fn();
+
 vi.mock('../../assets/logo.svg', () => ({
   default: 'mocked-logo.svg',
 }));
 
 describe('Header Component', () => {
   it('renders all navigation items from constants successfully', () => {
-    render(<Header />);
+    render(<Header setIsModalOpen={mockSetIsModalOpen} />);
 
     expect(screen.getByText('About')).toBeInTheDocument();
-    expect(screen.getByText('Work')).toBeInTheDocument();
-    expect(screen.getByText('Stack')).toBeInTheDocument();
+    expect(screen.getByText('Experience')).toBeInTheDocument();
     expect(screen.getByText('Projects')).toBeInTheDocument();
   });
 
   it('toggles the mobile modal open and closed via user interactions', async () => {
-    render(<Header />);
+    render(<Header setIsModalOpen={mockSetIsModalOpen} />);
 
     // Initial State
     expect(screen.queryByText('Contact')).not.toBeInTheDocument();
@@ -46,12 +47,12 @@ describe('Header Component', () => {
   });
 
   it('updates the active class visual styles when a desktop nav item is clicked', () => {
-    render(<Header />);
+    render(<Header setIsModalOpen={mockSetIsModalOpen} />);
 
     const aboutLink = screen.getByText('About');
-    const workLink = screen.getByText('Work');
+    const workLink = screen.getByText('Experience');
 
-    // Simulating clicking on 'Work'
+    // Simulating clicking on 'Experience'
     fireEvent.click(workLink);
 
     // We check that our CSS Module active tracker successfully gets applied to the element

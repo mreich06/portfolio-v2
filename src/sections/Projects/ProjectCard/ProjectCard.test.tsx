@@ -61,7 +61,7 @@ describe('ProjectCard', () => {
   it('renders a live link when liveUrl is provided', () => {
     render(<ProjectCard {...baseProps} liveUrl="https://example.com" />);
 
-    const link = screen.getByRole('link', { name: '↗' });
+    const link = screen.getByRole('link', { name: 'See Live' });
     expect(link).toHaveAttribute('href', 'https://example.com');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
