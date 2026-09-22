@@ -8,7 +8,7 @@ const HobbyBadge = ({ icon, label }: HobbyBadge) => {
   return (
     <div className={styles.badgeContainer}>
       <img width={20} src={icon} />
-      <p className="font-sans-xs color-white-70">{label}</p>
+      <p className="font-sans-xs color-white-75">{label}</p>
     </div>
   );
 };

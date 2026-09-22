@@ -23,7 +23,7 @@ const ProjectCard = ({ image, imageAltText, title, description, tags, githubUrl,
           {title}
         </Text>
       </div>
-      <Text variant="xs" font="sans" color="white-70" styles={styles.description}>
+      <Text variant="xs" font="grotesk" color="white-75" styles={styles.description}>
         {description}
       </Text>
       <TagSection tags={tags} />

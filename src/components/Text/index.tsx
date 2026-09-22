@@ -3,9 +3,9 @@ import styles from './Text.module.css';
 
 type TextVariant = 'eyebrow' | 'h1' | 'h2' | 'subtitle' | 'h3' | 'body' | 'bodySmall' | 'xs' | 'xxs' | 'button' | 'tag';
 
-type FontVariant = 'sans' | 'mono';
+type FontVariant = 'sans' | 'mono' | 'grotesk';
 
-type ColorVariant = 'default' | 'cyan' | 'muted' | 'white' | 'white-70' | 'white-50' | 'blue' | 'orange' | 'success' | 'error';
+type ColorVariant = 'default' | 'cyan' | 'muted' | 'white' | 'white-75' | 'white-50' | 'blue' | 'success' | 'error';
 interface TextProps {
   variant: TextVariant;
   font: FontVariant;
@@ -34,6 +34,7 @@ const variantStyles: Record<TextVariant, string> = {
 const fontStyles: Record<FontVariant, string> = {
   sans: styles.sans,
   mono: styles.mono,
+  grotesk: styles.grotesk,
 };
 
 const colorClasses: Record<ColorVariant, string> = {
@@ -41,10 +42,9 @@ const colorClasses: Record<ColorVariant, string> = {
   cyan: 'color-cyan',
   muted: 'color-muted',
   white: 'white',
-  'white-70': 'color-white-70',
+  'white-75': 'color-white-75',
   'white-50': 'color-white-50',
   blue: 'color-blue',
-  orange: 'color-orange',
   success: 'color-success',
   error: 'color-error',
 };

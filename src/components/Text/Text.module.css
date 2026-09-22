@@ -6,6 +6,10 @@
   font-family: var(--font-mono);
 }
 
+.grotesk {
+  font-family: var(--font-grotesk);
+}
+
 .eyebrow {
   margin: 0;
   font-size: var(--text-xs);

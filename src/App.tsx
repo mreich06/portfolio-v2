@@ -4,6 +4,8 @@ import { AnimatePresence, MotionConfig } from 'framer-motion';
 import CustomCursor from './components/motion/CustomCursor';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import SocialRail from './components/SocialRail';
+import SectionRail from './components/SectionRail';
 import About from './sections/About';
 import Contact from './sections/Contact';
 import Experience from './sections/Experience';
@@ -25,6 +27,8 @@ const App = () => {
       <CustomCursor />
       <div>
         <Header {...{ setIsModalOpen }} />
+        <SocialRail />
+        <SectionRail />
         <main className="content-container">
           <Hero {...{ setIsModalOpen }} />
           <About />

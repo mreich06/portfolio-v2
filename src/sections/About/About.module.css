@@ -32,7 +32,6 @@
 }
 
 .terminalContainer:hover {
-  transform: translateY(-6px);
   border-color: var(--border-light);
   background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
 }
@@ -53,7 +52,6 @@
 }
 
 .bottomSection:hover {
-  transform: translateY(-6px);
   border-color: var(--border-light);
   background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
 }
@@ -76,7 +74,6 @@
 }
 
 .sectionContainer:hover {
-  transform: translateY(-6px);
   border-color: var(--border-light);
   background: linear-gradient(to bottom, var(--card-bg-hover), var(--background));
 }
@@ -150,6 +147,10 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
+}
+
+.whoIAm {
+  line-height: 1.6rem;
 }
 
 @media (max-width: 767px) {

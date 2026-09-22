@@ -1,19 +1,33 @@
 .hero {
+  position: relative;
   display: flex;
   gap: 20px;
   width: 100%;
   margin-top: 10rem;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -14rem -20rem -6rem;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 300px at 26rem 22rem, rgba(79, 209, 197, 0.09), transparent 100%),
+    radial-gradient(circle 280px at calc(100% - 24rem) 28rem, rgba(97, 175, 239, 0.08), transparent 100%);
+}
+
 .heroText {
   flex: 1;
-  flex: 0 0 60%;
+  flex: 0 0 58%;
   text-align: left;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.7rem;
+  margin-top: 2rem;
+  line-height: 1.8rem;
 }
 
 .heroText h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .heroText h3 {
@@ -28,10 +42,13 @@
 
 .heroPhoto {
   flex: 1;
-  flex: 0 0 40%;
+  flex: 0 0 42%;
+  position: relative;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2.5rem;
 }
 
 .buttonContainer {
@@ -40,17 +57,81 @@
   margin-top: 1.2rem;
 }
 
-.photo {
+.buttonContainer .contactCta {
+  border-color: var(--border-light);
+  color: var(--text-white-75);
+  background-color: rgba(226, 232, 240, 0.06);
+}
+
+.buttonContainer .contactCta:hover {
+  border-color: var(--primary);
+  color: var(--text);
+}
+
+.photoStack {
+  position: relative;
   width: 100%;
-  max-width: clamp(180px, 22vw, 300px);
-  height: auto; /* preserve aspect ratio */
-  object-fit: cover; /* if a fixed height is ever set, crop instead of squash */
-  aspect-ratio: 448 / 456;
+  max-width: clamp(340px, 42vw, 540px);
+}
+
+.photoStack::before {
+  content: '';
+  position: absolute;
+  inset: -7rem;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(65px);
+  opacity: 0.26;
+  background: radial-gradient(circle at 18% 12%, var(--primary), transparent 65%), radial-gradient(circle at 82% 88%, var(--blue), transparent 68%);
+}
+
+.photo {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photoLabelTop {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  color: var(--text);
+  opacity: 0.4;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.photoLabelBottom {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--text);
+  opacity: 0.4;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 @media (max-width: 767px) {
   .hero {
-    margin-top: 2rem;
+    margin-top: 6rem;
     flex-direction: column;
     align-items: center;
   }
@@ -58,12 +139,18 @@
   .heroText {
     width: 100%;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   .heroPhoto {
     width: 100%;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .photoLabelBottom {
+    display: none;
   }
 
   .buttonContainer {

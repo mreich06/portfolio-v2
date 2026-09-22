@@ -10,10 +10,6 @@ vi.mock('../Button', () => ({
 
 const mockSetIsModalOpen = vi.fn();
 
-vi.mock('../../assets/logo.svg', () => ({
-  default: 'mocked-logo.svg',
-}));
-
 describe('Header Component', () => {
   it('renders all navigation items from constants successfully', () => {
     render(<Header setIsModalOpen={mockSetIsModalOpen} />);

@@ -4,6 +4,7 @@
   --card-bg-hover: #1a1d28;
   --foreground: #e2e8f0;
   --card: #49bcca;
+  --card-deep: #2b7c8a; /* darker teal for solid buttons — better contrast with white text */
   --text: #ffffff;
   --primary: #4fd1c5;
   --primary-foreground: #071a22;
@@ -12,21 +13,22 @@
   --green: #65e94a;
   --accent: #c55757;
   --blue: #61afef;
-  --orange: #e5a35a;
   --text-gray-mono: #3e4d5b;
   --border: rgba(148, 163, 184, 0.1);
   --border-light: rgba(148, 163, 184, 0.3);
   --input: #0e0f16;
   --ring: #4fd1c5;
   --radius: 0rem;
-  --grid-line: rgba(148, 163, 184, 0.05);
+  --grid-line: rgba(148, 163, 184, 0.04);
 
   /* Font Families */
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Roboto Mono', monospace;
+  --font-display: 'Anton', 'Inter', sans-serif;
+  --font-grotesk: 'Space Grotesk', 'Inter', sans-serif;
 
   /* Shades */
-  --text-white-70: #bbbec2; /* #FFFFFF @ 70% */
+  --text-white-75: #ffffffbf; /* #FFFFFF @ 75% */
   --text-white-50: #8e9399; /* #FFFFFF @ 50% */
 
   /* Font Sizes — ascending scale, 1rem = 16px */
@@ -54,8 +56,8 @@ body {
   font-size: var(--text-sm);
   background-color: var(--background);
   background-image:
-    linear-gradient(to right, var(--grid-line) 0.5px, transparent 0.5px), linear-gradient(to bottom, var(--grid-line) 0.5px, transparent 0.5px);
-  background-size: 5px 5px;
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
   color: var(--foreground);
   margin: 0;
   padding: 0;
@@ -148,8 +150,8 @@ button {
 .color-error {
   color: var(--secondary);
 }
-.color-white-70 {
-  color: var(--text-white-70);
+.color-white-75 {
+  color: var(--text-white-75);
 }
 .color-white-50 {
   color: var(--text-white-50);
@@ -159,9 +161,6 @@ button {
 }
 .color-blue {
   color: var(--blue);
-}
-.color-orange {
-  color: var(--orange);
 }
 
 /* Soft blurred glow anchored beneath card-like surfaces */
@@ -173,12 +172,12 @@ button {
 .card-aura::before {
   content: '';
   position: absolute;
-  left: 18%;
-  right: 18%;
-  bottom: -0.5rem;
-  height: 2.5rem;
+  left: 12%;
+  right: 12%;
+  bottom: -0.75rem;
+  height: 3rem;
   background: var(--primary);
-  filter: blur(56px);
+  filter: blur(48px);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -187,13 +186,19 @@ button {
 }
 
 .card-aura:hover::before {
-  opacity: 0.15;
+  opacity: 0.32;
 }
 
 .content-container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+@media (min-width: 1081px) {
+  .content-container {
+    padding: 0 clamp(2rem, 4vw, 4rem);
+  }
 }
 
 /* Font weights */

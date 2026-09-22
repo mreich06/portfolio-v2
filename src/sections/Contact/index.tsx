@@ -20,7 +20,7 @@ const Contact = () => {
   const calendlyUrl = 'https://calendly.com/mayareich';
 
   return (
-    <div className={styles.contactContainer}>
+    <div className={styles.contactContainer} id="contact">
       <SectionHeader
         sectionNumber={'05. Contact'}
         title={"Let's create something together."}
