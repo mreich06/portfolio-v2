@@ -12,6 +12,7 @@ type ButtonOwnProps = {
   variant?: ButtonVariant;
   bold?: boolean;
   upperCase?: boolean;
+  large?: boolean;
   href?: string;
 };
 type ButtonAsButton = ButtonOwnProps & { href?: undefined } & Omit<HTMLMotionProps<'button'>, keyof ButtonOwnProps>;
@@ -21,7 +22,7 @@ type ButtonAsAnchor = ButtonOwnProps & { href: string } & Omit<HTMLMotionProps<'
 type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 
 const Button = (props: ButtonProps) => {
-  const { children, icon, className = '', variant = 'outline-primary', bold = false, upperCase = false } = props;
+  const { children, icon, className = '', variant = 'outline-primary', bold = false, upperCase = false, large = false } = props;
 
   const variantStyles: Record<ButtonVariant, string> = {
     'outline-primary': styles.primaryOutline,
@@ -30,7 +31,7 @@ const Button = (props: ButtonProps) => {
     'solid-secondary': styles.solidSecondary,
     terminal: styles.terminal,
   };
-  const classes = `${styles.button} ${variantStyles[variant]} ${bold ? styles.bold : ''} ${upperCase ? styles.upperCase : ''} ${className}`;
+  const classes = `${styles.button} ${variantStyles[variant]} ${bold ? styles.bold : ''} ${upperCase ? styles.upperCase : ''} ${large ? styles.large : ''} ${className}`;
   const motionProps = {
     whileHover: { scale: 1.03, y: -2 },
     whileTap: { scale: 0.97, y: 0 },

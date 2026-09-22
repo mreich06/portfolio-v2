@@ -51,10 +51,10 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
         </StaggerItem>
 
         <StaggerItem className={styles.buttonContainer}>
-          <Button variant="solid-primary" bold upperCase onClick={downloadResume}>
+          <Button variant="solid-primary" bold upperCase large onClick={downloadResume}>
             Download Resume
           </Button>
-          <Button variant="outline-secondary" bold upperCase onClick={() => setIsModalOpen(true)}>
+          <Button variant="outline-secondary" bold upperCase large onClick={() => setIsModalOpen(true)}>
             Get in touch
           </Button>
         </StaggerItem>
