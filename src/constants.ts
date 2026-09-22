@@ -14,6 +14,34 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { label: 'Projects', href: '#projects' },
 ] as const;
 
+export type SocialIconKey = 'github' | 'linkedin' | 'tiktok' | 'whatsapp';
+
+interface SocialLink {
+  key: SocialIconKey;
+  label: string;
+  href: string;
+}
+export const SOCIAL_LINKS: readonly SocialLink[] = [
+  { key: 'github', label: 'GitHub', href: 'https://github.com/mreich06' },
+  { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/maya-reich/' },
+  { key: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@abroadwithmaya' },
+  { key: 'whatsapp', label: 'WhatsApp', href: 'https://wa.me/31621325571' },
+] as const;
+
+interface SectionDot {
+  id: string;
+  label: string;
+}
+export const SECTION_DOTS: readonly SectionDot[] = [
+  { id: 'hero', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+] as const;
+
+export const CONTACT_EMAIL = 'mayareich0606@gmail.com';
+
 export const Tag = [
   'React',
   'React Native',

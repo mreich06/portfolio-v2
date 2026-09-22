@@ -40,7 +40,7 @@ const Header = ({ setIsModalOpen }: HeaderProps) => {
 
       if (activeItem) {
         const left = activeItem.offsetLeft;
-        const width = activeItem.offsetWidth * 0.75;
+        const width = activeItem.offsetWidth;
 
         underlineRef.current.style.transform = `translateX(${left}px) scaleX(${width})`;
       }

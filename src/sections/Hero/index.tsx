@@ -25,7 +25,7 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
     link.click();
   };
   return (
-    <div className={styles.hero}>
+    <div className={styles.hero} id="hero">
       <StaggerContainer className={styles.heroText} staggerChildren={0.15}>
         <StaggerItem>
           <h5 className="font-sans-lg color-cyan">Hello, I'm</h5>
@@ -42,9 +42,11 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
         </StaggerItem>
         <StaggerItem>
           <Text variant="bodySmall" font="sans" color="white-70">
-            I’m a full-stack software engineer who builds production-ready web and mobile applications from frontend to backend. With experience in
-            React, TypeScript, Node.js, and cloud infrastructure, I care about creating software that is fast, scalable, and genuinely useful, from
-            enterprise applications serving millions of users to products built from the ground up.
+            I’m a <span className="color-cyan">full-stack software engineer</span> who builds production-ready web and mobile applications from
+            frontend to backend. With experience in <span className="color-cyan">React</span>, <span className="color-cyan">TypeScript</span>,{' '}
+            <span className="color-cyan">Node.js</span>, and cloud infrastructure, I care about creating software that is fast, scalable, and
+            genuinely useful, from enterprise applications serving <span className="color-cyan">millions</span> of users to products built from the
+            ground up.
           </Text>
         </StaggerItem>
 
@@ -58,7 +60,13 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
         </StaggerItem>
       </StaggerContainer>
       <FadeUp className={styles.heroPhoto} delay={0.2}>
-        <img className={styles.photo} src={image} alt="profile photo" />
+        <div className={styles.photoStack}>
+          <span className={styles.photoLabelTop}>Full Stack Developer</span>
+          <img className={styles.photo} src={image} alt="profile photo" />
+          <span className={styles.photoLabelBottom} aria-hidden="true">
+            Full Stack Developer
+          </span>
+        </div>
       </FadeUp>
     </div>
   );

@@ -23,15 +23,17 @@ const About = () => {
                 Who I am
               </Text>
               <Text variant="bodySmall" font="sans" color="white-70">
-                My journey into software started with a Computer Science degree at Middlebury College and has taken me across the U.S., Japan, and the
-                Netherlands. I've worked in very different environments, from a large technology company in San Diego, to Rakuten in Tokyo, to smaller
-                teams in the Netherlands where I've worked across the stack. Working across cultures, teams, and time zones has taught me to adapt
-                quickly, communicate clearly, and approach problems from different perspectives.
+                My journey into software started with a <span className="color-cyan">Computer Science degree</span> at Middlebury College and has
+                taken me across the U.S., Japan, and the Netherlands. I've worked in very different environments, from a large technology company in
+                San Diego, to <span className="color-cyan">Rakuten</span> in Tokyo, to smaller teams in the Netherlands where I've worked across the
+                stack. Working across cultures, teams, and time zones has taught me to adapt quickly, communicate clearly, and approach problems from
+                different perspectives.
               </Text>
               <Text variant="bodySmall" font="sans" color="white-70">
-                Outside of code, I like to keep moving and creating. I enjoy running, snowboarding, traveling, and exploring new places and cultures.
-                I also enjoy creative pursuits like drawing and experimenting with design. That curiosity carries into how I approach software: I'm
-                always learning, experimenting, and looking for ways to make things better.
+                Outside of code, I like to keep moving and creating. I enjoy <span className="color-cyan">running</span>,{' '}
+                <span className="color-cyan">snowboarding</span>, <span className="color-cyan">traveling</span>, and exploring new places and
+                cultures. I also enjoy creative pursuits like drawing and experimenting with design. That curiosity carries into how I approach
+                software: I'm always learning, experimenting, and looking for ways to make things better.
               </Text>
             </div>
           </div>
