@@ -12,7 +12,6 @@ interface SectionHeaderProps {
 const SectionHeader = ({ sectionNumber, title, sectionDescription, descriptionSecondLine, secondLineHighlight }: SectionHeaderProps) => {
   return (
     <FadeUp className={styles.container}>
-      <div className={styles.divider} />
       <div className={styles.titleSection}>
         <div className={styles.left}>
           <Text variant="eyebrow" font="mono" as="h2">

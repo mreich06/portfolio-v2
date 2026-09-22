@@ -1,5 +1,18 @@
 .contactContainer {
+  position: relative;
   display: block;
+}
+
+/* Glow at bottom of screen */
+.contactContainer::before {
+  content: '';
+  position: absolute;
+  inset: -4rem -26rem -14rem;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 480px at 26rem calc(100% - 10rem), rgba(79, 209, 197, 0.1), transparent 100%),
+    radial-gradient(circle 460px at calc(100% - 26rem) calc(100% - 6rem), rgba(97, 175, 239, 0.09), transparent 100%);
 }
 
 .columns {
