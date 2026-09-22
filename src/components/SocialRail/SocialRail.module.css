@@ -20,7 +20,7 @@
 
 .link {
   display: inline-flex;
-  color: var(--text-white-70);
+  color: var(--text-white-75);
   transition:
     color 0.2s ease,
     transform 0.2s ease;

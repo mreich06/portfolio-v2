@@ -41,7 +41,7 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
           </Text>
         </StaggerItem>
         <StaggerItem>
-          <Text variant="bodySmall" font="sans" color="white-70">
+          <Text variant="body" font="grotesk" color="white-75" className={styles.heroText}>
             I’m a <span className="color-cyan">full-stack software engineer</span> who builds production-ready web and mobile applications from
             frontend to backend. With experience in <span className="color-cyan">React</span>, <span className="color-cyan">TypeScript</span>,{' '}
             <span className="color-cyan">Node.js</span>, and cloud infrastructure, I care about creating software that is fast, scalable, and
@@ -54,7 +54,7 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
           <Button variant="solid-primary" bold upperCase large onClick={downloadResume}>
             Download Resume
           </Button>
-          <Button variant="outline-secondary" bold upperCase large onClick={() => setIsModalOpen(true)}>
+          <Button variant="outline-secondary" className={styles.contactCta} bold upperCase large onClick={() => setIsModalOpen(true)}>
             Get in touch
           </Button>
         </StaggerItem>

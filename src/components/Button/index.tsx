@@ -33,13 +33,18 @@ const Button = (props: ButtonProps) => {
   };
   const classes = `${styles.button} ${variantStyles[variant]} ${bold ? styles.bold : ''} ${upperCase ? styles.upperCase : ''} ${large ? styles.large : ''} ${className}`;
   const motionProps = {
-    whileHover: { scale: 1.03, y: -2 },
-    whileTap: { scale: 0.97, y: 0 },
-    transition: { duration: 0.15, ease: [0.16, 1, 0.3, 1] as const },
+    whileHover: { scale: 1.01, y: -1 },
+    whileTap: { scale: 0.99, y: 0 },
+    transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] as const },
   };
 
   if (props.href !== undefined) {
-    const { href, ...rest } = props; // narrowed to ButtonAsAnchor here
+    // narrowed to ButtonAsAnchor here — also strip the props already folded
+    // into `classes` above, otherwise this spread re-adds them to the DOM
+    // node (as raw attributes) and, worse, its `className` clobbers `classes`
+    // since it's spread after it.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- destructured only to exclude them from `rest`
+    const { href, className: _className, variant: _variant, bold: _bold, upperCase: _upperCase, large: _large, ...rest } = props;
     return (
       <motion.a href={href} target="_blank" rel="noopener noreferrer" className={classes} {...motionProps} {...rest}>
         {icon && <span className={styles.icon}>{icon}</span>}
@@ -48,7 +53,9 @@ const Button = (props: ButtonProps) => {
     );
   }
 
-  const { href, ...rest } = props; // narrowed to ButtonAsButton here
+  // narrowed to ButtonAsButton here — same reasoning as above.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- destructured only to exclude them from `rest`
+  const { href, className: _className, variant: _variant, bold: _bold, upperCase: _upperCase, large: _large, ...rest } = props;
   return (
     <motion.button className={classes} {...motionProps} {...rest}>
       {icon && <span className={styles.icon}>{icon}</span>}

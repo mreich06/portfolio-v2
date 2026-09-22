@@ -104,7 +104,7 @@ export const ProjectCards: ProjectCardProps[] = [
       'A modern, responsive portfolio website showcasing my projects and skills. Features smooth animations, optimized performance, and a dynamic contact form',
     tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'Node.js', 'Express', 'Nodemailer', 'Vercel', 'Render'],
     githubUrl: 'https://github.com/mreich06/portfolio',
-    liveUrl: 'https://mayareich.dev',
+    liveUrl: 'https://portfolio-orcin-beta-24.vercel.app/',
   },
 ];
 

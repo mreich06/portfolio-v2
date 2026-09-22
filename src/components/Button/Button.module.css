@@ -1,4 +1,5 @@
 .button {
+  font-family: var(--font-mono);
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
   letter-spacing: 0.04em;
@@ -10,7 +11,7 @@
 }
 
 .primarySolid {
-  background: var(--card);
+  background: var(--card-deep);
   color: var(--text);
 }
 

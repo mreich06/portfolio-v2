@@ -31,7 +31,7 @@ const ExperienceSection = ({ dates, company, location, jobTitle, descriptionList
         </Text>
         <Text className={styles.bullets} as="ul" variant="body" font="sans" color="cyan">
           {descriptionList.map((bulletPoint) => (
-            <Text as="li" variant="xs" font="sans" color="white-70">
+            <Text as="li" variant="xs" font="grotesk" color="white-75">
               {bulletPoint}
             </Text>
           ))}

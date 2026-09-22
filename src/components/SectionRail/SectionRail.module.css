@@ -50,7 +50,7 @@
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   letter-spacing: 0.05em;
-  color: var(--text-white-70);
+  color: var(--text-white-75);
   text-decoration: none;
   transition:
     color 0.2s ease,

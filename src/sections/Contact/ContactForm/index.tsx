@@ -115,7 +115,7 @@ const ContactForm = () => {
         />
         <div aria-live="polite" className={styles.buttonContainer}>
           {loading && (
-            <Text variant="xs" font="sans" color="white-70">
+            <Text variant="xs" font="sans" color="white-75">
               Loading...
             </Text>
           )}

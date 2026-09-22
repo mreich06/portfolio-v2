@@ -17,7 +17,7 @@ const SocialRail = () => (
         return (
           <li key={key}>
             <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles.link}>
-              <Icon size={20} />
+              <Icon size={24} />
             </a>
           </li>
         );
