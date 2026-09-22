@@ -1,6 +1,5 @@
 import styles from './Header.module.css';
 import Button from '../Button';
-import logoSvg from '../../assets/logo.svg';
 import { useEffect, useState, useRef } from 'react';
 import NavModal from '../NavModal';
 import { NAV_ITEMS } from '../../constants';
@@ -55,38 +54,41 @@ const Header = ({ setIsModalOpen }: HeaderProps) => {
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
-      <a href="/" aria-label="Home" className={styles.logo}>
-        <img src={logoSvg} alt="logo" />
-      </a>
-      <nav className={styles.headerNav}>
-        <ul className={styles.navItems}>
-          {NAV_ITEMS.map((item, index) => (
-            <li key={index} className={`${styles.navItemWrapper} ${index === activeIndex ? styles.activeItemWrapper : ''}`}>
-              <a
-                className={`${styles.navItem} ${index === activeIndex ? styles.active : ''}`}
-                onClick={(e) => handleItemClick(e, index, item.href)}
-                href={item.href}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-          <div ref={underlineRef} className={styles.activeUnderline} />
-        </ul>
-      </nav>
-      <Button
-        variant="outline-secondary"
-        className={styles.contactButton}
-        onClick={() => {
-          setIsModalOpen(true);
-          setIsMenuOpen(false);
-        }}
-      >
-        Get in touch
-      </Button>
-      <button aria-label="Toggle menu" className={styles.mobileMenuButton} onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <Menu className={styles.menuIcon} size={30} />
-      </button>
+      <div className={styles.headerBar}>
+        <a href="/" aria-label="Home" className={styles.logo}>
+          <span className={styles.logoMark}>MR</span>
+          <span className={styles.logoName}>Maya Reich</span>
+        </a>
+        <nav className={styles.headerNav}>
+          <ul className={styles.navItems}>
+            {NAV_ITEMS.map((item, index) => (
+              <li key={index} className={`${styles.navItemWrapper} ${index === activeIndex ? styles.activeItemWrapper : ''}`}>
+                <a
+                  className={`${styles.navItem} ${index === activeIndex ? styles.active : ''}`}
+                  onClick={(e) => handleItemClick(e, index, item.href)}
+                  href={item.href}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            <div ref={underlineRef} className={styles.activeUnderline} />
+          </ul>
+        </nav>
+        <Button
+          variant="outline-secondary"
+          className={styles.contactButton}
+          onClick={() => {
+            setIsModalOpen(true);
+            setIsMenuOpen(false);
+          }}
+        >
+          Get in touch
+        </Button>
+        <button aria-label="Toggle menu" className={styles.mobileMenuButton} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Menu className={styles.menuIcon} size={30} />
+        </button>
+      </div>
 
       <AnimatePresence>{isMenuOpen && <NavModal setIsModalOpen={setIsModalOpen} setIsMenuOpen={setIsMenuOpen} />}</AnimatePresence>
     </header>

@@ -13,8 +13,8 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 15%, rgba(79, 209, 197, 0.06), transparent 28%),
-    radial-gradient(circle at 82% 30%, rgba(97, 175, 239, 0.05), transparent 25%);
+    radial-gradient(circle at 20% 15%, rgba(79, 209, 197, 0.09), transparent 32%),
+    radial-gradient(circle at 82% 30%, rgba(97, 175, 239, 0.08), transparent 30%);
 }
 
 .heroText {
@@ -45,6 +45,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-top: 2.5rem;
 }
 
 .buttonContainer {
@@ -56,7 +58,20 @@
 .photoStack {
   position: relative;
   width: 100%;
-  max-width: clamp(200px, 24vw, 320px);
+  max-width: clamp(260px, 32vw, 420px);
+}
+
+.photoStack::before {
+  content: '';
+  position: absolute;
+  inset: -3.5rem;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(50px);
+  opacity: 0.55;
+  background:
+    radial-gradient(circle at 32% 22%, var(--primary), transparent 60%),
+    radial-gradient(circle at 72% 78%, var(--blue), transparent 62%);
 }
 
 .photo {
@@ -96,7 +111,7 @@
   line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--text);
-  opacity: 0.4;
+  opacity: 0.18;
   text-align: center;
   white-space: nowrap;
   pointer-events: none;
