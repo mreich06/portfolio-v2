@@ -27,6 +27,12 @@
   flex-direction: column;
 }
 
+.experienceContainer > *:last-child > .container {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .itemContainer {
   flex-direction: row;
 }

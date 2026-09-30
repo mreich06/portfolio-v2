@@ -8,7 +8,7 @@ const Projects = () => {
   return (
     <div id="projects">
       <SectionHeader
-        sectionNumber={'03. Projects '}
+        sectionNumber={'04. Projects '}
         title={'Featured Work'}
         sectionDescription={'~/projects/featured'}
         descriptionSecondLine={'3 of 5 visible'}

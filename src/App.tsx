@@ -9,6 +9,7 @@ import SectionRail from './components/SectionRail';
 import About from './sections/About';
 import Contact from './sections/Contact';
 import Experience from './sections/Experience';
+import FoundingExperience from './sections/FoundingExperience';
 import Hero from './sections/Hero';
 import Projects from './sections/Projects';
 import ContactModal from './components/ContactModal';
@@ -33,6 +34,7 @@ const App = () => {
           <Hero {...{ setIsModalOpen }} />
           <About />
           <Experience />
+          <FoundingExperience />
           <Projects />
           <Contact />
           <Footer />

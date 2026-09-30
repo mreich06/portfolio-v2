@@ -8,7 +8,7 @@ import { StaggerContainer, StaggerItem } from '../../components/motion/Stagger';
 import resumeUrl from '../../assets/maya-reich-resume.pdf';
 
 const TAGLINES = [
-  'Snowboarding enthusiast on a code journey',
+  'Snowboarding enthusiast on a coding journey',
   'Runner, traveler, full-stack engineer',
   'Curious builder, always learning something new',
 ];
@@ -42,7 +42,7 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
         </StaggerItem>
         <StaggerItem>
           <Text variant="body" font="grotesk" color="white-75" className={styles.heroText}>
-            I’m a <span className="color-cyan">full-stack software engineer</span> who builds production-ready web and mobile applications from
+            I’m a <span className="color-cyan">senior full-stack software engineer</span> who builds production-ready web and mobile applications from
             frontend to backend. With experience in <span className="color-cyan">React</span>, <span className="color-cyan">TypeScript</span>,{' '}
             <span className="color-cyan">Node.js</span>, and cloud infrastructure, I care about creating software that is fast, scalable, and
             genuinely useful, from enterprise applications serving <span className="color-cyan">millions</span> of users to products built from the
@@ -64,7 +64,7 @@ const Hero = ({ setIsModalOpen }: HeroProps) => {
           <span className={styles.photoLabelTop}>Full Stack Developer</span>
           <img className={styles.photo} src={image} alt="profile photo" />
           <span className={styles.photoLabelBottom} aria-hidden="true">
-            Full Stack Developer
+            Senior Full Stack Engineer
           </span>
         </div>
       </FadeUp>

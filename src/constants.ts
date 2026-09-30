@@ -1,7 +1,7 @@
 import type { ProjectCardProps } from './sections/Projects/ProjectCard';
 import spotifyDashboardImage from './assets/Projects/spotify-project.webp';
 import portfolioProject from './assets/Projects/portfolio-project.webp';
-import relokit from './assets/Projects/relokit.webp';
+import visihire from './assets/Projects/visihire.webp';
 import type { ExperienceSectionProps } from './sections/Experience';
 
 interface NavItem {
@@ -36,6 +36,7 @@ export const SECTION_DOTS: readonly SectionDot[] = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
+  { id: 'founding-experience', label: 'Founding Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ] as const;
@@ -88,13 +89,13 @@ export const ProjectCards: ProjectCardProps[] = [
     githubUrl: 'https://github.com/mreich06/spotify-dashboard',
   },
   {
-    image: relokit,
-    imageAltText: 'Relokit',
-    title: 'Relokit',
+    image: visihire,
+    imageAltText: 'Visihire',
+    title: 'Visihire',
     description:
-      'A comprehensive relocation assistance platform, providing personalized guidance, document management, and community support for individuals moving abroad',
-    tags: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma', 'Auth.js v5', 'Vercel'],
-    githubUrl: 'https://github.com/mreich06/relokit',
+      'A self-founded SaaS platform that gives job seekers a single connected workflow for applications, documents, and outreach, in place of scattered spreadsheets and CVs. Features a Kanban-style application tracker, a CRM for contacts, ATS-style CV scoring, and LLM-powered personalized outreach generation',
+    tags: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma', 'Vercel'],
+    liveUrl: 'https://visihire.com',
   },
   {
     image: portfolioProject,
@@ -108,30 +109,46 @@ export const ProjectCards: ProjectCardProps[] = [
   },
 ];
 
+export const FoundingExperience: ExperienceSectionProps[] = [
+  {
+    dates: 'JUN 2025 - PRESENT',
+    company: 'Visihire',
+    location: 'Remote',
+    jobTitle: 'Founder & Solo Developer',
+    descriptionList: [
+      'Founded Visihire (visihire.com) after identifying a gap: job seekers juggle spreadsheets, CVs, cover letters, and LinkedIn messages, and designed a single connected workflow for job applications, documents, and outreach',
+      'Developed a Kanban-style application tracker and a CRM to track contacts',
+      'Built ATS-style CV scoring and personalized outreach generation',
+      'Integrated LLM APIs into the product using prompt design, structured output parsing, and evaluation to power CV scoring',
+    ],
+    stack: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma', 'Vercel'],
+  },
+];
+
 export const WorkHistory: ExperienceSectionProps[] = [
   {
     dates: 'JAN 2026 - PRESENT',
     company: 'Lean Management Instituut',
     location: 'Zeist, The Netherlands',
-    jobTitle: 'Full Stack Software Engineer',
+    jobTitle: 'Senior Full Stack Engineer',
     descriptionList: [
-      'Built an internal course management platform in Next.js, React, TypeScript, Tailwind, PostgreSQL/Prisma, implementing role-based auth (Auth.js), Zod-validated REST endpoints, and SFTP integration for third-party feed delivery',
-      'Eliminated manual course updates, automating publishing with a custom XML generator, and synced enrollments to ActiveCampaign via REST APIs, with server-side API authentication and structured error handling',
-      'Built and maintained a CI/CD pipeline (GitHub Actions) with Vitest and Playwright test suites, accelerating test creation with AI-assisted tools',
+      'Built an internal course management platform end-to-end in Next.js, React, TypeScript, Tailwind, PostgreSQL/Prisma, implementing role-based auth (Auth.js), Zod-validated REST endpoints, and SFTP integration for third-party feed delivery',
+      'Eliminated manual course updates across multiple different platforms by integrating via REST APIs and a custom XML generator with bidirectional enrollment syncing',
+      'Built and maintained a CI/CD pipeline (GitHub Actions) with Vitest and Playwright; using AI-assisted tools in daily development',
       'Developed a performant WordPress theme using PHP 8.2, Tailwind, Vite and Docker with custom data architecture',
     ],
     stack: ['React', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma', 'Auth.js', 'Zod', 'PHP'],
   },
   {
-    dates: 'JAN 2024 - JUL 2024',
+    dates: 'DEC 2023 - JUL 2024',
     company: 'Rakuten',
     location: 'Tokyo, Japan',
-    jobTitle: 'Front-End Software Engineer',
+    jobTitle: 'Front-End Engineer',
     descriptionList: [
-      "Developed and shipped customer-facing features in React and TypeScript for Rakuten Ichiba, Japan's largest e-commerce platform with 40M+ active users",
+      "Developed customer-facing features in React/TypeScript for Rakuten Ichiba, Japan's largest e-commerce platform (40M+ users)",
       'Improved page load times by 21% from 3.7s to 2.9s by implementing a hybrid SSR/CSR architecture, lazy-loading non-critical components, and reducing initial JavaScript bundle size',
       'Optimized the existing Backend-for-Frontend (BFF) layer with backend teams, reducing client-side API calls by 17%',
-      'Contributed to CI/CD pipelines using AWS CodePipeline, CodeBuild, Docker, and Jenkins, integrating automated E2E testing with Playwright',
+      'Contributed to CI/CD pipelines using AWS CodePipeline, CodeBuild, Docker and Jenkins, and E2E testing with Playwright',
     ],
     stack: ['React', 'TypeScript', 'Jest', 'PlayWright', 'Docker', 'Jenkins'],
   },
@@ -139,7 +156,7 @@ export const WorkHistory: ExperienceSectionProps[] = [
     dates: 'SEPT 2019 - NOV 2022',
     company: 'Viasat',
     location: 'San Diego, CA, USA',
-    jobTitle: 'Full Stack Software Engineer',
+    jobTitle: 'Full Stack Engineer',
     descriptionList: [
       'Developed MyViasat, a cross-platform React Native application for web, iOS, and Android, with end-to-end ownership of the payment portal and integrating internal Payments team APIs, improving checkout completion by 11%',
       'Led the implementation of user analytics by building a custom pixel tracker and Kibana dashboards, enabling the team to analyze user behavior and drive product improvements',
