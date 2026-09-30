@@ -51,6 +51,10 @@
   --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
@@ -197,7 +201,8 @@ button {
 
 @media (min-width: 1081px) {
   .content-container {
-    padding: 0 clamp(2rem, 4vw, 4rem);
+    /* min 4.5rem keeps clear of the fixed SocialRail/SectionRail icon edge (~3.75rem max) */
+    padding: 0 max(clamp(2rem, 4vw, 4rem), 4.5rem);
   }
 }
 

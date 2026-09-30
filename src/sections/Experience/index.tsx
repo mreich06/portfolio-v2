@@ -11,9 +11,9 @@ export interface ExperienceSectionProps {
   descriptionList: string[];
   stack: Tag[];
 }
-const ExperienceSection = ({ dates, company, location, jobTitle, descriptionList, stack }: ExperienceSectionProps) => {
+const ExperienceEntry = ({ dates, company, location, jobTitle, descriptionList, stack }: ExperienceSectionProps) => {
   return (
-    <div className={styles.container} id="experience">
+    <div className={styles.container}>
       <div className={styles.leftCol}>
         <Text variant="xs" font="mono" color="cyan">
           {dates}
@@ -45,24 +45,43 @@ const ExperienceSection = ({ dates, company, location, jobTitle, descriptionList
     </div>
   );
 };
-const Experience = () => {
+interface ExperienceListProps {
+  id: string;
+  sectionNumber: string;
+  title: string;
+  sectionDescription: string;
+  descriptionSecondLine: string;
+  items: ExperienceSectionProps[];
+}
+export const ExperienceList = ({ id, sectionNumber, title, sectionDescription, descriptionSecondLine, items }: ExperienceListProps) => {
   return (
-    <div>
+    <div id={id}>
       <SectionHeader
-        sectionNumber={'02. Experience '}
-        title={'Work History'}
-        sectionDescription={'~/experience'}
-        descriptionSecondLine={'web development roles'}
+        sectionNumber={sectionNumber}
+        title={title}
+        sectionDescription={sectionDescription}
+        descriptionSecondLine={descriptionSecondLine}
       />
       <StaggerContainer className={styles.experienceContainer}>
-        {WorkHistory.map((item) => (
+        {items.map((item) => (
           <StaggerItem key={item.company}>
-            <ExperienceSection {...item} />
+            <ExperienceEntry {...item} />
           </StaggerItem>
         ))}
       </StaggerContainer>
     </div>
   );
 };
+
+const Experience = () => (
+  <ExperienceList
+    id="experience"
+    sectionNumber="02. Experience "
+    title="Work History"
+    sectionDescription="~/experience"
+    descriptionSecondLine="web development roles"
+    items={WorkHistory}
+  />
+);
 
 export default Experience;

@@ -40,7 +40,7 @@ describe('Hero Component', () => {
     for (let i = 0; i < 55; i++) {
       act(() => vi.advanceTimersByTime(60));
     }
-    expect(screen.getByText('Snowboarding enthusiast on a code journey')).toBeInTheDocument();
+    expect(screen.getByText('Snowboarding enthusiast on a coding journey')).toBeInTheDocument();
   });
 
   it('renders both action buttons', () => {
